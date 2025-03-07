@@ -6,6 +6,8 @@ const webpackConfig = require('./webpack.config.js');
 const webpackStream = require('webpack-stream');
 const sass = require('gulp-sass')(require('sass'));
 const clean = require('gulp-clean');
+const eslint = require('gulp-eslint');
+const prettier = require('gulp-prettier');
 
 task('pug', () => {
     return src('./src/pug/views/**/*.pug')
@@ -57,4 +59,17 @@ task('clean', () => {
         .pipe(clean());
 })
 
-task('serve', series('clean', parallel('pug', 'webpack', 'sass', 'copy'), parallel('watch', 'server')))
+task('lint', () => {
+    return src('./src/js/**/*.js')
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+})
+
+task('format', () => {
+    return src('./src/**/*.{js,scss,pug}')
+        .pipe(prettier())
+        .pipe(dest('./src'));
+})
+
+task('serve', series('clean', parallel('pug', 'webpack', 'sass', 'copy', 'lint'), parallel('watch', 'server')))
