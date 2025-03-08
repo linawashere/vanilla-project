@@ -11,11 +11,7 @@ const prettier = require('gulp-prettier');
 
 task('pug', () => {
     return src('./src/pug/views/**/*.pug')
-        .pipe(
-            pug({
-                // Your options in here.  
-            })
-        )
+        .pipe(pug({}))
         .pipe(dest('./build'))
         .pipe(browserSync.stream());
 })
@@ -50,7 +46,7 @@ task('watch', () => {
 
 task('copy', () => {
     return src('./src/public/**/*')
-        .pipe(copy('./build', { prefix: 1 }))
+        .pipe(dest('./build'))
         .pipe(browserSync.stream());
 })
 
