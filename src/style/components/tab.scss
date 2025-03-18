@@ -6,9 +6,11 @@
     gap: 0.8rem;
     border-radius: 1.6rem;
     color: var(--text-secondary-promo-color);
+    transition: all 0.3 ease-out;
+    
+    @include text-tab;
 
     &--desktop {
-        @include text-tab;
         &.tab--default {
             background-color: var(--gray-color-6);
         }
@@ -19,7 +21,6 @@
     }
 
     &--mobile {
-        @include text-tab;
         padding: 0.8rem 1.2rem;
 
         &.tab--default {
@@ -27,7 +28,7 @@
         }
     }
 
-    &.tab--pressed {
+    &--pressed {
         background-color: var(--gray-color-4);
         color: var(--text-color);
     }
