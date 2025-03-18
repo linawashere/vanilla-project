@@ -1,0 +1,37 @@
+.pager {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.pagination {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    gap: 1rem;
+    border-radius: 1.6rem;
+    background-color: transparent;
+    color: var(--text-color);
+    transition: all 0.3 ease-out;
+
+    @include text-body;
+
+    &--desktop {
+        &.pagination--hover {
+            background-color: var(--gray-color-4);
+        }
+    }
+
+    &--mobile {
+        border-radius: 1.2rem;
+    }
+
+    &--pressed {
+        background-color: var(--gray-color-5);
+    }
+
+    &--disabled {
+        color: var(--text-blind-color);
+    }
+}

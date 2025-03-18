@@ -1,0 +1,6 @@
+mixin pagination(text, state = 'default', type = '', adaptive = 'desktop')
+    button.pagination(
+        class=`pagination--${adaptive}`
+        class=`pagination--${state}`
+    )
+        = text
