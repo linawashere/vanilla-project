@@ -1,0 +1,6 @@
+mixin tab(text, state = 'default', adaptive = 'desktop')
+    button.tab(
+        class=`tab--${adaptive}`
+        class=`tab--${state}`
+    )
+        = text

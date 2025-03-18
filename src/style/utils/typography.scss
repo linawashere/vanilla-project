@@ -89,6 +89,11 @@
     font-size: 1.8rem;
     line-height: 2.4rem;
     font-weight: 500;
+
+    @include mobile {
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+    }
 }
 
 @mixin text-body {
