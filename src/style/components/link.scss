@@ -1,0 +1,57 @@
+@import '../utils/icons.scss';
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3 ease-out;
+    text-decoration: underline;
+    color: var(--text-color);
+
+    &--social {
+        gap: 1.2rem;
+
+        .icon {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+
+    &--icon {
+        &.link--s {
+            .icon {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
+        &.link--l {
+            .icon {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+    }
+
+    &--s {
+        @include text-body-small;
+
+        &.link--social {
+            @include text-body-bold;
+        }
+    }
+
+    &--l {
+        @include text-body;
+    }
+
+    &--default {
+        text-decoration: none;
+    }
+
+    &--hover,
+    &--pressed,
+    &--text {
+        color: var(--ultramarine-default-color);
+    }
+}

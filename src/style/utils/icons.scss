@@ -1,0 +1,17 @@
+@function icon-url($icon-name){
+@return url('../../icons/#{$icon-name}.svg');
+}
+
+.icon {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-link {
+    background-image: icon-url('link');
+}
+
+.icon-social-vk {
+    background-image: icon-url('social-vk');
+}

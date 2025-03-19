@@ -1,0 +1,10 @@
+mixin link(text, state = 'default', adaptive = 'desktop', type = 'text', size = 's', icon = null)
+    a.link(
+        class=`link--${adaptive}`
+        class=`link--${state}`
+        class=`link--${type}`
+        class=`link--${size}`
+    )
+        if icon
+            i.icon(class=`icon-${icon}`)
+        = text
