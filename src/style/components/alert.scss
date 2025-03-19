@@ -1,0 +1,59 @@
+@import '../utils/icons.scss';
+
+.alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--card-color);
+    transition: all 0.3 ease-out;
+    box-shadow: 0px 0px 50px 0px #1F273314;
+    color: var(--text-color);
+    @include text-body-small-bold;
+
+    .alert__content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1.2rem;
+    }
+
+    .alert__text {
+        flex: 1;
+    }
+
+    .alert__close {
+        cursor: pointer;
+    }
+
+    &--desktop {
+        width: 44rem;
+        gap: 3.2rem;
+        padding: 2.4rem;
+        border-radius: 2.4rem;
+
+        .icon {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+
+    &--mobile {
+        width: 35.1rem;
+        gap: 2.4rem;
+        padding: 2rem;
+        border-radius: 2rem;
+
+        .icon {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    &--success {
+        border: 1px solid var(--electric-green-default-color);
+    }
+
+    &--error {
+        border: 1px solid var(--suai-red-default-color);
+    }
+}

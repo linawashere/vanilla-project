@@ -1,0 +1,10 @@
+mixin alert(text, adaptive = 'desktop', state)
+    div.alert(
+        class=`alert--${adaptive}`
+        class=`alert--${state}`
+    )
+        div.alert__content
+            i.icon(class=`icon-${type}`)
+            span.alert__text= text
+        button.alert__close(type='button')
+            i.icon(class='icon-close')
