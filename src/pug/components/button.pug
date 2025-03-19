@@ -1,0 +1,10 @@
+mixin button(text, type = 'main', state = 'default', adaptive = 'desktop', arrowDirection = null)
+    button.button(
+        class=`button--${adaptive}`
+        class=`button--${type}`
+        class=`button--${state}`
+        class=`button--${arrowDirection}`
+    )
+        = text
+        if arrow
+            i.icon(class=`icon-arrow-${arrowDirection}`)

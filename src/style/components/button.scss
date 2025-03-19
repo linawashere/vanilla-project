@@ -1,0 +1,124 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem 2.4rem;
+  border-radius: 1.6rem;
+  transition: all 0.3s ease-out;
+  @include text-button;
+
+  &--main {
+    padding: 1.6rem 2.4rem;
+
+    &.button--hover {
+      border-radius: 3.2rem;
+    }
+
+    &.button--app {
+      background-color: var(--ultramarine-default-color);
+      color: var(--text-contrast-color);
+
+      &.button--pressed {
+        background-color: var(--ultramarine-dark-color);
+      }
+    }
+
+    &.button--contrast {
+      background-color: var(--card-color);
+      color: var(--text-color);
+
+      &.button--pressed {
+        background-color: var(--gray-color-2);
+      }
+
+      &.button--hover {
+        background-color: var(--gray-color-1);
+      }
+
+    }
+
+    .headline__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include text-h1;
+      border: none;
+
+      &.button--desctop {
+        padding-left: 2.4rem;
+        gap: 3.2rem;
+      }
+
+      &.button--mobile {
+        padding-left: 2rem;
+        gap: 2rem;
+      }
+
+      &.button--disabled {
+        color: var(--text-blind-color);
+      }
+    }
+
+    &--headline {
+      border-radius: 1.6rem;
+      padding: 1.2rem;
+      gap: 1.2rem;
+
+      &.button--default {
+        background-color: var(--card-color);
+      }
+
+      &.button--hover {
+        background-color: var(--ultramarine-default-color);
+      }
+
+      &.button--pressed {
+        background-color: var(--ultramarine-dark-color);
+      }
+
+      &.button--desktop {
+        .icon {
+          width: 3.2rem;
+          height: 3.2rem;
+        }
+      }
+
+      &.button--default {
+        .icon {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+      }
+    }
+
+    &--menu {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      border-radius: 1.2rem;
+      background-color: transparent;
+      padding: 1.2rem;
+
+      &.button--default {
+        background-color: var(--gray-color-1);
+      }
+
+      &.button--pressed {
+        background-color: var(--gray-color-3);
+        color: var(--ultramarine-default-color);
+      }
+
+      &.button--hover {
+        background-color: var(--gray-color-4);
+      }
+    }
+
+    &.button--disabled {
+      background-color: transparent;
+      color: var(--text-blind-color);
+      border: 1px solid var(--border-color);
+      border-radius: 1.6rem;
+      cursor: not-allowed;
+    }
+  }
+}
