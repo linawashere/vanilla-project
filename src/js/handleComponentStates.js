@@ -10,11 +10,17 @@ export function handleComponentStates(contSelector, itemSelector, hoverClass, pr
 
     function handleHover(event) {
         const item = event.target.closest(itemSelector);
+
+        const icon = item.querySelector('.icon-file');
+        if (!icon) return;
+
         if (!item) return;
         if (event.type === 'mouseenter') {
             item.classList.add(hoverClass);
+            icon.classList.add('icon-file--hover');
         } else if (event.type === 'mouseleave') {
             item.classList.remove(hoverClass);
+            icon.classList.remove('icon-file--hover');
         }
     }
 

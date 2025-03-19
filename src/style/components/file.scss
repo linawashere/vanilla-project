@@ -1,0 +1,33 @@
+@import '../utils/icons.scss';
+
+.file {
+    width: 44rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    transition: all 0.3s ease-out;
+    color: var(--ultramarine-default-color);
+    @include text-body-small;
+
+    &--desktop {
+        .icon {
+            width: 4rem;
+            height: 4rem;
+        }
+        &.file--hover {
+            text-decoration: underline;
+        }
+    }
+
+    &--mobile {
+        .icon {
+            width: 3.2rem;
+            height: 3.2rem;
+        }
+    }
+
+    .file__size{
+        @include text-caption;
+        color: var(--text-secondary-promo-color);
+    }
+}

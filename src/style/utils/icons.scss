@@ -15,3 +15,11 @@
 .icon-social-vk {
     background-image: icon-url('social-vk');
 }
+
+.icon-file {
+    background-image: icon-url('file-default');
+
+    &.icon-file--hover {
+        background-image: icon-url('file-hover');
+    }
+}

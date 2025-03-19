@@ -1,0 +1,8 @@
+mixin file(text, format = 'PDF', size = '99.9KB', state = 'default', adaptive = 'desktop')
+    a.file(
+        class=`file--${adaptive}`
+        class=`file--${state}`
+    )
+        i.icon(class='icon-file')
+        span.file__text = text
+        span.file__size = `${format}, ${size}`
