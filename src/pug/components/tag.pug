@@ -1,0 +1,8 @@
+mixin tag(text, state = 'default', adaptive = 'desktop', type, color)
+    button.tag(
+        class=`tag--${adaptive}`
+        class=`tag--${state}`
+        class=`tag--${type}`
+        class=`tag--${color}`
+    )
+        = text
