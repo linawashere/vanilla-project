@@ -1,2 +1,14 @@
 @import '~normalize.css/normalize.css';
 @import './global/reset.scss';
+
+@import './global/typography.scss';
+
+@import './utils/icons.scss';
+
+@import './components/tab.scss';
+@import './components/pagination.scss';
+@import './components/tag.scss';
+@import './components/link.scss';
+@import './components/file.scss';
+@import './components/alert.scss';
+@import './components/button.scss';
