@@ -1,0 +1,14 @@
+mixin button(props={})
+    -
+        var {
+            tag = 'button',
+            contrast = true,
+            outlined = false,
+        } = props
+
+    #{tag}.button(
+        class=[{ _contrast: contrast, _outline: outlined }]
+    )&attributes(attributes)
+        .button__inner
+            span.button__text
+                block

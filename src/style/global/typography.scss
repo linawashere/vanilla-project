@@ -3,11 +3,14 @@
 @import '../utils/breakpoints.scss';
 @import '../utils/typography.scss';
 
+// Можно перенести в base, здесь они в целом не используются
 html {
     --main-font: 'Onest', 'Helvetica Neue', 'Arial', sans-serif;
     --text-font: 'Inter', 'Arial', sans-serif;
 }
 
+// Добавим так же теги
+h1,
 .text-h1 {
     @include text-h1;
 }

@@ -1,0 +1,12 @@
+extends ../layouts/base-layout
+include ../components/Button/index
+
+block variables
+    - var title = 'EXAMPLE'
+
+block content
+    .container
+        h1!= title
+    .example-container
+        +button EXAMPLE
+        +button EXAMPLE

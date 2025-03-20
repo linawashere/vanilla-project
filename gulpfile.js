@@ -1,4 +1,4 @@
-const { src, dest, task, series, parallel, watch } = require('gulp')
+const { src, dest, task, series, parallel, watch } = require('gulp');
 const pug = require('gulp-pug');
 const browserSync = require('browser-sync').create();
 const webpack = require('webpack');
@@ -7,7 +7,8 @@ const webpackStream = require('webpack-stream');
 const sass = require('gulp-sass')(require('sass'));
 const clean = require('gulp-clean');
 const eslint = require('gulp-eslint');
-const prettier = require('gulp-prettier');
+// const prettier = require('gulp-prettier');
+const copy = require('gulp-copy');
 
 task('pug', () => {
     return src('./src/pug/views/**/*.pug')
@@ -21,8 +22,8 @@ task('server', () => {
         server: { baseDir: 'build/' },
         notify: false,
         online: true
-    })
-})
+    });
+});
 
 task('webpack', () => {
     return src('./src/js/main.js')
@@ -40,20 +41,21 @@ task('sass', () => {
 
 task('watch', () => {
     watch('./src/pug/**/*.pug', series('pug'));
-    watch('./src/js/**/*.js', series('webpack'));
+    watch('./src/js/**/*.js', series('js'));
     watch('./src/style/**/*.scss', series('sass'));
+    watch('./src/public/**/*', series('copy'));
 })
 
 task('copy', () => {
     return src('./src/public/**/*')
         .pipe(dest('./build'))
         .pipe(browserSync.stream());
-})
+});
 
 task('clean', () => {
     return src('./build', { read: false, allowEmpty: true })
         .pipe(clean());
-})
+});
 
 task('lint', () => {
     return src('./src/js/**/*.js')
@@ -68,4 +70,11 @@ task('format', () => {
         .pipe(dest('./src'));
 })
 
-task('serve', series('clean', parallel('pug', 'webpack', 'sass', 'copy', 'lint'), parallel('watch', 'server')))
+task('js', () => {
+    return src('./src/js/main.js')
+        .pipe(webpackStream(webpackConfig, webpack))
+        .pipe(dest('./build/js'))
+        .pipe(browserSync.stream());
+});
+
+task('serve', series('clean', parallel('pug','webpack', 'sass', 'js', 'copy'), parallel('watch', 'server')));

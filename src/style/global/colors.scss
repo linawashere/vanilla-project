@@ -1,35 +1,48 @@
-:root {
+// TODO вместо :root используем html
+html {
+    // желательно разделять комментариями, для читаемости
     --card-color: #ffffff;
+
+    // background-color
     --app-bg: #eeeff2;
+
     --gray-color-1: #f7f8fc;
     --gray-color-2: #f0f2f8;
     --gray-color-3: #ecedf2;
     --gray-color-4: #e3e5ec;
     --gray-color-5: #d8dbe4;
     --gray-color-6: #e7e9ef;
+
     --text-color: #1f2733;
     --text-secondary-promo-color: #95a0b2;
     --text-contrast-color: #ffffff;
-    --text-contrast-secondary-color: #ffffff99;
+    --text-contrast-secondary-color: #ffffff99; // rgba(255, 255, 255, 0.6);
     --text-blind-color: #ced5e0;
     --text-contrast-blind-color: #ffffff4d;
+
     --divider-color: #eeeff2;
     --border-color: #d3d6e0;
+
     --suai-red-default-color: #ff004e;
     --suai-red-light-1-color: #ff4780;
     --suai-red-light-2-color: #ffebf1;
     --suai-red-light-3-color: #e85eb8;
+
     --purple-default-color: #6e27be;
     --purple-light-color: #f7efff;
+
     --ultramarine-default-color: #5747ff;
     --ultramarine-dark-color: #4132dc;
     --ultramarine-light-color-1: #6e61ff;
     --ultramarine-light-color-2: #edecff;
+
     --suai-blue-default-color: #0087ff;
     --suai-blue-light-color: #edf7ff;
+
     --cyan-default-color: #0ebef1;
     --cyan-light-color-1: #59d9ff;
     --cyan-light-color-2: #e8faff;
+
     --electric-green-default-color: #6da800;
     --electric-green-light-color-1: #afef38;
     --electric-green-light-color-2: #e6f3cb;

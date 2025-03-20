@@ -5,3 +5,7 @@ import './components/tag';
 import './components/file';
 import './components/alert';
 import './components/button';
+
+
+
+console.log('Loading')

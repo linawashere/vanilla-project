@@ -1,0 +1,20 @@
+block variables
+
+doctype html
+head(prefix='og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#')
+    meta(charset='UTF-8')
+    title #{ title }
+    meta(name='description', content=description)
+    meta(name='keywords', content=keywords)
+    meta(name='viewport', content=viewport)
+    meta(property='og:title', content=title)
+    meta(property='og:description', content=description)
+    link(rel='stylesheet', href='/css/main.css')
+
+    script.
+        window.app_started_at = new Date()
+body
+    main.page
+        block content
+
+    script(src='/js/app.js', defer)
