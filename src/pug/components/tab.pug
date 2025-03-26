@@ -1,6 +1,10 @@
-mixin tab(text, state = 'default', adaptive = 'desktop')
-    button.tab(
-        class=`tab--${adaptive}`
-        class=`tab--${state}`
-    )
-        = text
+mixin tab(props = {})
+    -
+        var {
+            tag = 'button',
+        } = props
+
+    #{tag}.tab&attributes(attributes)
+        .tab__inner
+            span.tab__text
+                block

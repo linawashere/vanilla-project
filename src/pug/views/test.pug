@@ -1,6 +1,16 @@
 extends ../layouts/base-layout
 include ../components/Button/index
-
+include ../components/Headline/index
+include ../components/MenuItem/index
+include ../components/ArrowButton/index
+include ../components/IconButton/index
+include ../components/FlexButton/index
+include ../components/CloseMobile/index
+include ../components/alert
+include ../components/file
+include ../components/tab
+include ../components/link
+include ../components/pagination
 block variables
     - var title = 'EXAMPLE'
 
@@ -8,5 +18,40 @@ block content
     .container
         h1!= title
     .example-container
-        +button EXAMPLE
-        +button EXAMPLE
+        +button Example
+        +button({contrast: true}) Example
+        +button({outlined: true}) Example
+        +button({isDisabled: true}) Example
+        +headline({ iconName: 'button' }) Example
+        +headline({ iconName: 'arrow', isDisabled: true }) Example
+        +menuItem({ iconName: 'icon-right' }) Menu Item
+        +arrowButton()
+        +arrowButton({ light: true })
+        +arrowButton({ contrast: true })
+        +arrowButton({ isDisabled: true })
+        +arrowButton({ light: true, isDisabled: true })
+        +arrowButton({ contrast: true, isDisabled: true })
+        +actionButton({ type: 'bookmark' })
+        +actionButton({ type: 'play' })
+        +flexButton({ iconNameLeft: 'arrow-up-left', iconNameRight: 'arrow-up-right' }) Button Text
+        +flexButton({ iconNameLeft: 'arrow-up-left' }) Button Text
+        +flexButton({ iconNameRight: 'arrow-right' }) Button Text
+        +flexButton() Button Text
+        +flexButton({ isDisabled: true }) Disabled Button
+        +closeMobile()
+        +alert({ type: 'success' })
+            | This is a success alert
+        +alert({ type: 'error' })
+            | This is an error alert
+        +file('PDF', '99.9KB', { tag: 'div' })
+            | File
+        +tab({ tag: 'button' })
+            | Link Tab
+        +link({ type: 'text', size: 's' })
+            | Read more
+        +link({ type: 'icon', size: 'l' })
+            | Download file
+        +link({ type: 'social', size: 'l' })
+            | Download file
+        +pagination({ type: 'number' })
+            | 1

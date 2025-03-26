@@ -1,0 +1,61 @@
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    gap: 1rem;
+    border-radius: 1.6rem;
+    transition: all 0.3s ease-out;
+
+    @include mobile {
+        border-radius: 1.2rem;
+    }
+
+    .icon {
+        width: 3.2rem;
+        height: 3.2rem;
+
+        @include mobile {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+
+    &.action-button--bookmark {
+
+        &:active {
+            background-color: rgba(255, 255, 255, 0.2);
+
+            .icon {
+                content: url('../../icons/bookmark-pressed.svg');
+            }
+        }
+
+        @include from-mobile {
+            &:hover {
+                background-color: var(--ultramarine-default-color);
+            }
+        }
+
+        .icon {
+            content: url('../../icons/bookmark.svg');
+        }
+    }
+
+    &.action-button--play {
+        &:active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .icon {
+            content: url('../../icons/player-play.svg');
+        }
+
+        @include from-mobile {
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.4);
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.headline {
+    @include text-h1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-color);
+    transition: all 0.3s ease-out;
+
+    .icon {
+        width: 5.6rem;
+        height: 5.6rem;
+
+        @include mobile {
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+
+    .headline__inner {
+        display: flex;
+        align-items: center;
+        gap: 3.2rem;
+        padding-left: 2.4rem;
+
+        @include mobile {
+            gap: 2rem;
+            padding-left: 2rem;
+        }
+    }
+
+    &:hover {
+        .icon {
+            content: url('../../icons/button-hover.svg');
+        }
+    }
+
+    &:active {
+        .icon {
+            content: url('../../icons/button-pressed.svg');
+        }
+    }
+
+    &--disabled {
+        color: var(--text-blind-color);
+        cursor: not-allowed;
+        pointer-events: none;
+
+        .icon {
+            content: url('../../icons/button-disabled.svg');
+        }
+    }
+}

@@ -1,0 +1,17 @@
+mixin arrowButton(props={})
+    -
+        var {
+            tag = 'button',
+            contrast = false,
+            light = false,
+            isDisabled = false,
+        } = props
+
+    #{tag}.arrow-button(
+        class=[
+            { '_contrast': contrast },
+            { '_light': light },
+            { 'arrow-button--disabled': isDisabled }
+        ]
+    )&attributes(attributes)
+        i.icon.icon-arrow-button

@@ -1,0 +1,19 @@
+mixin flexButton(props={})
+    -
+        var {
+            tag = 'button',
+            iconNameLeft = null,
+            iconNameRight = null,
+            isDisabled = false,
+        } = props
+
+    #{tag}.flex-button(
+        class=[{ 'flex-button--disabled': isDisabled }]
+    )&attributes(attributes)
+        .flex-button__inner
+            if iconNameLeft
+                i.icon(class=`icon-${iconNameLeft}`)
+            span.flex-button__text
+                block
+            if iconNameRight
+                i.icon(class=`icon-${iconNameRight}`)

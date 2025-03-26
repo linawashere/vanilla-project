@@ -1,0 +1,78 @@
+@mixin disabled-state($border-color, $icon-url) {
+    border: 1px solid $border-color;
+    background-color: transparent;
+    cursor: not-allowed;
+    pointer-events: none;
+
+    .icon {
+        content: url($icon-url);
+    }
+}
+
+.arrow-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+    background-color: var(--gray-color-4);
+    gap: 1rem;
+    border-radius: 1.6rem;
+    transition: all 0.3s ease-out;
+
+    @include mobile {
+        border-radius: 1.2rem;
+    }
+
+    .icon {
+        width: 3.2rem;
+        height: 3.2rem;
+
+        @include mobile {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+
+    @include from-mobile {
+        &:hover {
+            background-color: var(--gray-color-5);
+        }
+    }
+
+    &:active {
+        background-color: var(--gray-color-5);
+    }
+
+    &--disabled {
+        @include disabled-state(var(--text-blind-color), '../../icons/arrow-button-disabled.svg');
+    }
+
+    &._contrast {
+        background-color: rgba(255, 255, 255, 0.2);
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .icon {
+            content: url('../../icons/arrow-button-contrast.svg');
+        }
+
+        &--disabled {
+            @include disabled-state(var(--text-contrast-blind-color), '../../icons/arrow-button-disabled.svg');
+        }
+    }
+
+    &._light {
+        background-color: var(--gray-color-2);
+
+        &:hover,
+        &:active {
+            background-color: var(--gray-color-3);
+        }
+
+        &--disabled {
+            @include disabled-state(var(--text-contrast-blind-color), '../../icons/arrow-button-disabled.svg');
+        }
+    }
+}

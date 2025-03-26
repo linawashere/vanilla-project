@@ -1,0 +1,25 @@
+.close-mobile {
+
+    @include mobile {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--gray-color-2);
+        transition: all 0.3s ease-out;
+        gap: 1rem;
+        border-radius: 0.8rem;
+        padding: 0.4rem;
+
+        .icon {
+            content: url('../../icons/x.svg');
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+
+        &:active {
+            background-color: var(--gray-color-3);
+        }
+    }
+
+
+}

@@ -1,14 +1,30 @@
-@import '../utils/icons.scss';
-
 .link {
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    transition: all 0.3 ease-out;
-    text-decoration: underline;
+    transition: all 0.3s ease-out;
+    text-decoration: none;
     color: var(--text-color);
+    cursor: pointer;
+
+    .icon {
+        width: 2rem;
+        height: 2rem;
+
+        @include mobile {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+
+    .link__text {
+        @include text-body-small;
+    }
 
     &--social {
+        .icon {
+            content: url('../../icons/social-vk.svg');
+        }
         gap: 1.2rem;
 
         .icon {
@@ -18,6 +34,11 @@
     }
 
     &--icon {
+
+        .icon {
+            content: url('../../icons/link.svg');
+        }
+
         &.link--s {
             .icon {
                 width: 2rem;
@@ -53,5 +74,16 @@
     &--pressed,
     &--text {
         color: var(--ultramarine-default-color);
+    }
+
+    @include from-mobile {
+        &:hover {
+            color: var(--ultramarine-default-color);
+            text-decoration: underline;
+        }
+    }
+
+    &:active {
+        color: var(--ultramarine-dark-color);
     }
 }

@@ -1,8 +1,11 @@
-mixin file(text, format = 'PDF', size = '99.9KB', state = 'default', adaptive = 'desktop')
-    a.file(
-        class=`file--${adaptive}`
-        class=`file--${state}`
-    )
-        i.icon(class='icon-file')
-        span.file__text = text
-        span.file__size = `${format}, ${size}`
+mixin file(format = 'PDF', size = '99.9KB', props = {})
+    -
+        var {
+            tag = 'div',
+        } = props
+
+    #{tag}.file&attributes(attributes)
+        i.icon-file(class='icon-file')
+        .file__content
+            span.file__text File
+            span.file__size= `${format}, ${size}`

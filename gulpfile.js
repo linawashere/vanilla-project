@@ -46,6 +46,12 @@ task('watch', () => {
     watch('./src/public/**/*', series('copy'));
 })
 
+task('icons', () => {
+    return src('./src/icons/**/*')
+        .pipe(dest('./build/icons'))
+        .pipe(browserSync.stream());
+});
+
 task('copy', () => {
     return src('./src/public/**/*')
         .pipe(dest('./build'))
@@ -77,4 +83,4 @@ task('js', () => {
         .pipe(browserSync.stream());
 });
 
-task('serve', series('clean', parallel('pug','webpack', 'sass', 'js', 'copy'), parallel('watch', 'server')));
+task('serve', series('clean', parallel('pug','webpack', 'sass', 'js', 'copy', 'icons'), parallel('watch', 'server')));

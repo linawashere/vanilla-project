@@ -1,0 +1,13 @@
+mixin menuItem(props={})
+    -
+        var {
+            tag = 'button',
+            iconName = null,
+        } = props
+
+    #{tag}.menu-item&attributes(attributes)
+        .menu-item__inner
+            span.menu-item__text
+                block
+            if iconName
+                i.icon(class=`icon-${iconName}`)

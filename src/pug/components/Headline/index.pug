@@ -1,0 +1,16 @@
+mixin headline(props={})
+    -
+        var {
+            tag = 'button',
+            iconName = null,
+            isDisabled = false,
+        } = props
+
+    #{tag}.headline(
+        class=[{ 'headline--disabled': isDisabled }]
+    )&attributes(attributes)
+        .headline__inner
+            span.headline__text
+                block
+            if iconName
+                i.icon(class=`icon-${iconName}`)

@@ -1,4 +1,6 @@
 .tab {
+    @include text-tab;
+    
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -6,30 +8,35 @@
     gap: 0.8rem;
     border-radius: 1.6rem;
     color: var(--text-secondary-promo-color);
-    transition: all 0.3 ease-out;
+    transition: all 0.3s ease-out;
+    background-color: var(--gray-color-6);
 
-    @include text-tab;
+    .tab__inner {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
 
-    &--desktop {
-        &.tab--default {
-            background-color: var(--gray-color-6);
-        }
+    @include mobile {
+        padding: 0.8rem 1.2rem;
+        border-radius: 1.2rem;
+    }
 
-        &.tab--hover {
+    @include from-mobile {
+        &:hover {
             background-color: var(--gray-color-4);
         }
     }
 
-    &--mobile {
-        padding: 0.8rem 1.2rem;
-
-        &.tab--default {
-            background-color: var(--gray-color-6);
-        }
-    }
-
-    &--pressed {
+    &:active {
         background-color: var(--gray-color-4);
         color: var(--text-color);
+    }
+
+    @include from-mobile {
+        &:hover {
+            background-color: var(--gray-color-4);
+            color: var(--text-secondary-promo-color);
+        }
     }
 }

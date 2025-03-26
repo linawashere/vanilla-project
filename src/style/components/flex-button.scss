@@ -1,0 +1,59 @@
+.flex-button {
+    @include text-button;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+
+    border-radius: 1.2rem;
+
+    @include mobile {
+        padding: 1.3rem 2rem;
+        border-radius: 1.2rem;
+    }
+
+    .flex-button__inner {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .icon {
+        content: url('../../icons/arrow-up-right.svg');
+        width: 2.4rem;
+        height: 2.4rem;
+
+        @include mobile {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+
+    @include from-mobile {
+        &:hover {
+            color: var(--text-secondary-promo-color);
+
+            .icon {
+                content: url('../../icons/arrow-up-right-hover.svg');
+            }
+        }
+    }
+
+    &:active {
+        color: var(--text-secondary-promo-color);
+
+        .icon {
+            content: url('../../icons/arrow-up-right-hover.svg');
+        }
+    }
+
+    &--disabled {
+        color: var(--text-blind-color);
+        cursor: not-allowed;
+        pointer-events: none;
+
+        .icon {
+            content: url('../../icons/arrow-up-right-disabled.svg');
+        }
+    }
+}

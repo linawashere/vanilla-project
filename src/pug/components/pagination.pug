@@ -1,6 +1,20 @@
-mixin pagination(text, state = 'default', type = '', adaptive = 'desktop')
-    button.pagination(
-        class=`pagination--${adaptive}`
-        class=`pagination--${state}`
-    )
-        = text
+mixin pagination(props = {})
+    -
+        var {
+            tag = 'button',
+            type = null,
+            isDisabled = false,
+        } = props
+
+    #{tag}.pagination(
+        class=[
+            `pagination--${type}`,
+            { 'pagination--disabled': isDisabled }
+        ]
+    )&attributes(attributes)
+        .pagination__inner
+            if type === 'icon'
+                i.icon(class=`icon-${props.iconName || 'default-icon'}`)
+            else if type === 'number'
+                span.pagination__text
+                    block

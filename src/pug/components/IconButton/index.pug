@@ -1,0 +1,11 @@
+mixin actionButton(props={})
+    -
+        var {
+            tag = 'button',
+            type = 'bookmark',
+        } = props
+
+    #{tag}.action-button(
+        class=[`action-button--${type}`]
+    )&attributes(attributes)
+        i.icon(class=`icon-${type}`)

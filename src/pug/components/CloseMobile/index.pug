@@ -1,0 +1,8 @@
+mixin closeMobile(props={})
+    -
+        var {
+            tag = 'button',
+        } = props
+
+    #{tag}.close-mobile&attributes(attributes)
+        i.icon(class='icon-close')
