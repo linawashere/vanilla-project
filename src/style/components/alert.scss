@@ -1,6 +1,8 @@
 @import '../utils/icons.scss';
 
 .alert {
+    @include text-body-small-bold;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -8,7 +10,36 @@
     transition: all 0.3 ease-out;
     box-shadow: 0px 0px 50px 0px #1F273314;
     color: var(--text-color);
-    @include text-body-small-bold;
+    width: 44rem;
+    gap: 3.2rem;
+    padding: 2.4rem;
+    border-radius: 2.4rem;
+
+    .icon-alert {
+        width: 2.4rem;
+        height: 2.4rem;
+
+        @include mobile {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        &.icon-success {
+            content: url('../../icons/alert-success.svg');
+        }
+
+        &.icon-error {
+            background-size: contain;
+            content: url('../../icons/alert-error.svg');
+        }
+    }
+
+    @include mobile {
+        width: 35.1rem;
+        gap: 2.4rem;
+        padding: 2rem;
+        border-radius: 2rem;
+    }
 
     .alert__content {
         display: flex;
@@ -23,29 +54,9 @@
 
     .alert__close {
         cursor: pointer;
-    }
 
-    &--desktop {
-        width: 44rem;
-        gap: 3.2rem;
-        padding: 2.4rem;
-        border-radius: 2.4rem;
-
-        .icon {
-            width: 2.4rem;
-            height: 2.4rem;
-        }
-    }
-
-    &--mobile {
-        width: 35.1rem;
-        gap: 2.4rem;
-        padding: 2rem;
-        border-radius: 2rem;
-
-        .icon {
-            width: 2rem;
-            height: 2rem;
+        .icon-close {
+            content: url('../../icons/x.svg');
         }
     }
 

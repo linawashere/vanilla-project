@@ -1,10 +1,15 @@
-mixin alert(text, adaptive = 'desktop', state)
-    div.alert(
-        class=`alert--${adaptive}`
-        class=`alert--${state}`
-    )
-        div.alert__content
-            i.icon(class=`icon-${type}`)
-            span.alert__text= text
+mixin alert(props={})
+    -
+        var {
+            tag = 'div',
+            type = null,
+        } = props
+
+    #{tag}.alert(class=type ? `alert--${type}` : null)&attributes(attributes)
+        .alert__content
+            if type
+                i.icon-alert(class=`icon-${type}`)
+            span.alert__text
+                block
         button.alert__close(type='button')
-            i.icon(class='icon-close')
+            i.icon-close(class='icon-close')
