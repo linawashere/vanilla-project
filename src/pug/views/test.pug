@@ -49,9 +49,15 @@ block content
             | Link Tab
         +link({ type: 'text', size: 's' })
             | Read more
+        +link({ type: 'text', size: 'l' })
+            | Read more
         +link({ type: 'icon', size: 'l' })
             | Download file
         +link({ type: 'social', size: 'l' })
             | Download file
         +pagination({ type: 'number' })
             | 1
+        +pagination({ type: 'icon' })
+        +pagination({ type: 'icon', isDisabled: true })
+        +tab({ tag: 'button' })
+            | Tab 1

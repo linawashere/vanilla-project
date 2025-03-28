@@ -22,12 +22,6 @@
         border-radius: 1.2rem;
     }
 
-    @include from-mobile {
-        &:hover {
-            background-color: var(--gray-color-4);
-        }
-    }
-
     &:active {
         background-color: var(--gray-color-4);
         color: var(--text-color);

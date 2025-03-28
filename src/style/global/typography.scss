@@ -3,26 +3,22 @@
 @import '../utils/breakpoints.scss';
 @import '../utils/typography.scss';
 
-// Можно перенести в base, здесь они в целом не используются
-html {
-    --main-font: 'Onest', 'Helvetica Neue', 'Arial', sans-serif;
-    --text-font: 'Inter', 'Arial', sans-serif;
-}
-
-// Добавим так же теги
 h1,
 .text-h1 {
     @include text-h1;
 }
 
+h2,
 .text-h2 {
     @include text-h2;
 }
 
+h3,
 .text-h3 {
     @include text-h3;
 }
 
+h4,
 .text-h4 {
     @include text-h4;
 }
@@ -47,16 +43,16 @@ h1,
     @include text-body
 }
 
-.text-body-bold {
-    @include text-body-bold
+.text-bold {
+    @include text-bold
 }
 
-.text-text-body-small {
-    @include text-body-small
+.text-sm {
+    @include text-sm
 }
 
-.text-body-small-bold {
-    @include text-body-small-bold
+.text-sm-bold {
+    @include text-sm-bold
 }
 
 .text-caption {

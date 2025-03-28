@@ -1,58 +1,76 @@
+$padding: 1.2rem;
+$gap: 1rem;
+$border-radius: 1.6rem;
+$mobile-border-radius: 1.2rem;
+
+@mixin pagination-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+@mixin icon-style {
+    width: 2rem;
+    height: 2rem;
+
+    @include mobile {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+}
+
 .pagination {
     @include text-body;
-  
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1.2rem;
-    gap: 1rem;
-    border-radius: 1.6rem;
+    padding: $padding;
+    gap: $gap;
+    border-radius: $border-radius;
     background-color: transparent;
     color: var(--text-color);
     transition: all 0.3s ease-out;
-  
+
     .pagination__inner {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
+        @include pagination-inner;
     }
-  
-    @include mobile {
-        border-radius: 1.2rem;
+
+    .pagination__text {
+        width: 2.4rem;
+        height: 2.4rem;
     }
-  
+
     &:active {
         background-color: var(--gray-color-5);
     }
-  
+
     &--disabled {
         color: var(--text-blind-color);
         cursor: not-allowed;
         pointer-events: none;
     }
-  
+
     @include from-mobile {
         &:hover {
             background-color: var(--gray-color-4);
         }
     }
-  
+
+    @include mobile {
+        border-radius: $mobile-border-radius;
+    }
+
     &--number {
         .pagination__text {
             font-weight: bold;
         }
     }
-  
+
     &--icon {
         .icon {
-            width: 2rem;
-            height: 2rem;
+            @include icon-style;
             content: url(../../icons/arrow-left.svg);
-  
-            @include mobile {
-                width: 1.6rem;
-                height: 1.6rem;
-            }
         }
     }
-  }
+}

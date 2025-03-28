@@ -14,7 +14,7 @@ mixin pagination(props = {})
     )&attributes(attributes)
         .pagination__inner
             if type === 'icon'
-                i.icon(class=`icon-${props.iconName || 'default-icon'}`)
+                i.icon(class=`icon-${props.iconName || 'arrow-left'}`)
             else if type === 'number'
                 span.pagination__text
                     block

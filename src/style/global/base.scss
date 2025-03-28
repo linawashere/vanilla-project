@@ -1,4 +1,7 @@
 html {
+    --main-font: 'Onest', 'Helvetica Neue', 'Arial', sans-serif;
+    --text-font: 'Inter', 'Arial', sans-serif;
+
     font-size: 62.5%;
 
     @media screen and (max-width: 767px) {

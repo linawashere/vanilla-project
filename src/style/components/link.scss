@@ -1,3 +1,20 @@
+@mixin icon-style($width, $height, $content: null) {
+    width: $width;
+    height: $height;
+
+    @if $content {
+        content: url($content);
+    }
+
+    @include mobile {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+}
+
+$link-icon: '../../icons/link.svg';
+$social-icon: '../../icons/social-vk.svg';
+
 .link {
     display: inline-flex;
     align-items: center;
@@ -8,57 +25,36 @@
     cursor: pointer;
 
     .icon {
-        width: 2rem;
-        height: 2rem;
-
-        @include mobile {
-            width: 1.6rem;
-            height: 1.6rem;
-        }
-    }
-
-    .link__text {
-        @include text-body-small;
+        @include icon-style(2rem, 2rem);
     }
 
     &--social {
-        .icon {
-            content: url('../../icons/social-vk.svg');
-        }
         gap: 1.2rem;
 
         .icon {
-            width: 1.6rem;
-            height: 1.6rem;
+            @include icon-style(1.6rem, 1.6rem, $social-icon);
         }
     }
 
     &--icon {
-
         .icon {
-            content: url('../../icons/link.svg');
-        }
+            @include icon-style(2rem, 2rem, $link-icon);
 
-        &.link--s {
-            .icon {
-                width: 2rem;
-                height: 2rem;
+            &.link--s {
+                @include icon-style(2rem, 2rem);
             }
-        }
 
-        &.link--l {
-            .icon {
-                width: 2.4rem;
-                height: 2.4rem;
+            &.link--l {
+                @include icon-style(2.4rem, 2.4rem);
             }
         }
     }
 
     &--s {
-        @include text-body-small;
+        @include text-sm;
 
         &.link--social {
-            @include text-body-bold;
+            @include text-bold;
         }
     }
 
@@ -78,12 +74,13 @@
 
     @include from-mobile {
         &:hover {
-            color: var(--ultramarine-default-color);
+            @extend .link--hover;
             text-decoration: underline;
         }
     }
 
     &:active {
-        color: var(--ultramarine-dark-color);
+        @extend .link--pressed;
+        text-decoration: underline;
     }
 }
