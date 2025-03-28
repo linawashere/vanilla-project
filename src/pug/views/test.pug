@@ -1,4 +1,5 @@
 extends ../layouts/base-layout
+
 include ../components/Button/index
 include ../components/Headline/index
 include ../components/MenuItem/index
@@ -11,53 +12,91 @@ include ../components/file
 include ../components/tab
 include ../components/link
 include ../components/pagination
+include ../components/tag
+
 block variables
     - var title = 'EXAMPLE'
 
 block content
     .container
         h1!= title
-    .example-container
-        +button Example
-        +button({contrast: true}) Example
-        +button({outlined: true}) Example
-        +button({isDisabled: true}) Example
-        +headline({ iconName: 'button' }) Example
-        +headline({ iconName: 'arrow', isDisabled: true }) Example
-        +menuItem({ iconName: 'icon-right' }) Menu Item
-        +arrowButton()
-        +arrowButton({ light: true })
-        +arrowButton({ contrast: true })
-        +arrowButton({ isDisabled: true })
-        +arrowButton({ light: true, isDisabled: true })
-        +arrowButton({ contrast: true, isDisabled: true })
-        +actionButton({ type: 'bookmark' })
-        +actionButton({ type: 'play' })
-        +flexButton({ iconNameLeft: 'arrow-up-left', iconNameRight: 'arrow-up-right' }) Button Text
-        +flexButton({ iconNameLeft: 'arrow-up-left' }) Button Text
-        +flexButton({ iconNameRight: 'arrow-right' }) Button Text
-        +flexButton() Button Text
-        +flexButton({ isDisabled: true }) Disabled Button
-        +closeMobile()
-        +alert({ type: 'success' })
-            | This is a success alert
-        +alert({ type: 'error' })
-            | This is an error alert
-        +file('PDF', '99.9KB', { tag: 'div' })
-            | File
-        +tab({ tag: 'button' })
-            | Link Tab
-        +link({ type: 'text', size: 's' })
-            | Read more
-        +link({ type: 'text', size: 'l' })
-            | Read more
-        +link({ type: 'icon', size: 'l' })
-            | Download file
-        +link({ type: 'social', size: 'l' })
-            | Download file
-        +pagination({ type: 'number' })
-            | 1
-        +pagination({ type: 'icon' })
-        +pagination({ type: 'icon', isDisabled: true })
-        +tab({ tag: 'button' })
-            | Tab 1
+
+    .example-container(style="display: flex; flex-wrap: wrap; gap: 2rem;")
+        //- Кнопки
+        .column(style="flex: 1; min-width: 500px;")
+            h4 Buttons
+            +button Example
+            +button({contrast: true}) Example
+            +button({outlined: true}) Example
+            +button({isDisabled: true}) Example
+
+        //- Заголовки
+        .column(style="flex: 1; min-width: 500px;")
+            h4 Headlines
+            +headline({ iconName: 'button' }) Example
+            +headline({ iconName: 'arrow', isDisabled: true }) Example
+
+        //- Меню
+        .column(style="flex: 1; min-width: 300px;")
+            h4 Menu
+            +menuItem({ iconName: 'icon-right' }) Menu Item
+
+        //- Стрелочные кнопки
+        .column(style="flex: 1; min-width: 300px;")
+            h4 Arrow Buttons
+            +arrowButton()
+            +arrowButton({ light: true })
+            +arrowButton({ contrast: true })
+            +arrowButton({ isDisabled: true })
+            +arrowButton({ light: true, isDisabled: true })
+            +arrowButton({ contrast: true, isDisabled: true })
+
+        //- Файлы
+        .column(style="flex: 1; min-width: 300px;")
+            h4 Files
+            +actionButton({ type: 'bookmark' })
+            +actionButton({ type: 'play' })
+            +file('PDF', '99.9KB', { tag: 'div' })
+                | File
+
+        //- Flex Buttons, Close Mobile
+        .column(style="flex: 1; min-width: 500px;")
+            h4 Flex Buttons, Close Mobile
+            +flexButton({ iconNameLeft: 'arrow-up-left', iconNameRight: 'arrow-up-right' }) Button Text
+            +flexButton({ iconNameLeft: 'arrow-up-left' }) Button Text
+            +flexButton({ iconNameRight: 'arrow-right' }) Button Text
+            +flexButton() Button Text
+            +flexButton({ isDisabled: true }) Disabled Button
+            +closeMobile()
+
+        //- Алерты
+        .column(style="flex: 1; min-width: 600px;")
+            h4 Alerts
+            +alert({ type: 'success' })
+                | This is a success alert
+            +alert({ type: 'error' })
+                | This is an error alert
+
+        //- Табы и пагинация
+        .column(style="flex: 1; min-width: 300px;")
+            h4 Tabs, Pagination
+            +tab({ tag: 'button' })
+                | Link Tab
+            +pagination({ type: 'number' })
+                | 1
+            +pagination({ type: 'icon' })
+            +pagination({ type: 'icon', isDisabled: true })
+
+        //- Ссылки и теги
+        .column(style="flex: 1; min-width: 300px;")
+            h4 Links, Tags
+            +link({ type: 'text', size: 's' })
+                | Read more
+            +link({ type: 'text', size: 'l' })
+                | Read more
+            +link({ type: 'icon', size: 'l' })
+                | Download file
+            +link({ type: 'social', size: 'l' })
+                | Download file
+            +tag({ type: 'educational-materials', color: 'parenting' })
+                | Parenting Tab

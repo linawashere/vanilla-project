@@ -50,6 +50,10 @@ $social-icon: '../../icons/social-vk.svg';
         }
     }
 
+    &--text {
+        color: var(--ultramarine-default-color);
+    }
+
     &--s {
         @include text-sm;
 
@@ -66,21 +70,15 @@ $social-icon: '../../icons/social-vk.svg';
         text-decoration: none;
     }
 
-    &--hover,
-    &--pressed,
-    &--text {
-        color: var(--ultramarine-default-color);
-    }
-
     @include from-mobile {
         &:hover {
-            @extend .link--hover;
+            color: var(--ultramarine-default-color);
             text-decoration: underline;
         }
     }
 
     &:active {
-        @extend .link--pressed;
+        color: var(--ultramarine-default-color);
         text-decoration: underline;
     }
 }

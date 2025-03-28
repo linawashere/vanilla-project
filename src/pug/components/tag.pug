@@ -1,8 +1,11 @@
-mixin tag(text, state = 'default', adaptive = 'desktop', type, color)
-    button.tag(
-        class=`tag--${adaptive}`
-        class=`tag--${state}`
-        class=`tag--${type}`
-        class=`tag--${color}`
-    )
-        = text
+mixin tag(props = {})
+    -
+        var {
+            tag = 'button',
+            type = '',
+        } = props
+
+    #{tag}.tag(class=`tag--${type} tag--${color}`)&attributes(attributes)
+        .tag__inner
+            span.tag__text
+                block

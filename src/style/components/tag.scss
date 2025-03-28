@@ -3,52 +3,29 @@
     align-items: center;
     justify-content: center;
     padding: 0.8rem 1.2rem;
+    border-radius: 1.6rem;
     color: var(--text-color);
-    transition: all 0.3 ease-out;
+    transition: all 0.3s ease-out;
 
     @include text-button;
 
-    &--desktop {
-        border-radius: 1.6rem;
-
-        &.tag--educational-materials {
-            gap: 0.8rem;
-            background-color: var(--card-color);
-
-            &.tag--hover {
-                color: var(--text-secondary-promo-color);
-            }
-        }
-
-        &.tag--event {
-            border-radius: 0.8rem;
-            padding: 0.6rem 1.2rem;
-            gap: 1rem;
-            background-color: var(--gray-color-3);
-            color: var(--text-secondary-promo-color);
-
-            @include text-sm-bold;
-
-            &.tag--hover {
-                background-color: var(--gray-color-4);
-            }
-        }
+    .tag__inner {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
     }
 
-    &--mobile {
-        border-radius: 1.2rem;
+    &--educational-materials {
+        background-color: var(--card-color);
+    }
 
-        &.tag--educational-materials {
-            padding: 0.6rem 1.2rem;
-            gap: 0.8rem;
-        }
+    &--event {
+        background-color: var(--gray-color-3);
+    }
 
-        &.tag--event {
-            border-radius: 0.8rem;
-            padding: 0.4rem 0.8rem;
-            gap: 1rem;
-            
-            @include text-sm-bold;
+    @include mobile {
+        &:hover {
+            color: var(--text-secondary-color);
         }
     }
 
