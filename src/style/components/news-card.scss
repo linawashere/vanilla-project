@@ -1,0 +1,58 @@
+.news-card {
+    background-color: var(--card-color);
+    border-radius: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding: 1.6rem;
+    width: 44rem;
+    cursor: pointer;
+
+    @include mobile {
+        width: 35.1rem;
+        gap: 2rem;
+        border-radius: 3.2rem;
+        padding: 1.2rem;
+    }
+
+    &__header {
+        border-radius: 2.8rem;
+        background-image: url('../../icons/event-card-img.svg');
+        background-size: cover;
+        background-position: center;
+        width: 40.8rem;
+        height: 25.2rem;
+
+        @include mobile {
+            border-radius: 2.4rem;
+            width: 32.7rem;
+            height: 20rem;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1.6rem 1.6rem 1.6rem;
+        gap: 2.4rem;
+    }
+
+    &__title {
+        @include text-h4;
+        color: var(--text-color);
+    }
+
+    &__meta {
+        @include text-sm;
+        color: var(--text-secondary-promo-color);
+    }
+
+    @include from-mobile {
+        &:hover {
+            &__title {
+                color: var(--ultramarine-default-color);
+            }
+        }
+    }
+
+}

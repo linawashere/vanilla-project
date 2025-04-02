@@ -1,0 +1,209 @@
+.event-card {
+    background-color: var(--card-color);
+    padding: 1.6rem;
+    border-radius: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    width: 44rem;
+    cursor: pointer;
+
+    @include mobile {
+        width: 35.1rem;
+        padding: 1.2rem;
+        gap: 2rem;
+        border-radius: 3.2rem;
+    }
+
+    .icon {
+        width: 2.4rem;
+        height: 2.4rem;
+
+        @include mobile {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    .event-card__top {
+        position: relative;
+        background-image: url('../../icons/event-card-img.svg');
+        background-size: cover;
+        background-position: center;
+        width: 40.8rem;
+        height: 25.2rem;
+        border-radius: 2.8rem;
+
+        .icon-event-card-img {
+            content: url('../../icons/event-card-img.jpg');
+        }
+
+        @include mobile {
+            width: 32.7rem;
+            height: 20rem;
+            border-radius: 1.6rem;
+        }
+
+        @include from-mobile {
+            &:hover {
+                .event-card__title {
+                    color: var(--ultramarine-default-color);
+                }
+            }
+        }
+
+        .event-card__date {
+            position: absolute;
+            top: 1.6rem;
+            left: 1.6rem;
+            width: 6.6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 1.6rem;
+            padding: 0.8rem;
+            background-color: var(--card-color);
+
+            @include mobile {
+                border-radius: 1.6rem;
+                width: 5.2rem;
+                top: 1.2rem;
+                left: 1.2rem;
+            }
+
+            span:first-child {
+                @include text-h2;
+                color: var(--ultramarine-default-color);
+            }
+
+            span:last-child {
+                @include text-sm;
+                color: var(--text-secondary-promo-color);
+            }
+        }
+
+        .event-card__button {
+            position: absolute;
+            top: 1.6rem;
+            left: 34.4rem;
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 0.8rem;
+            gap: 1rem;
+
+            @include mobile {
+                border-radius: 1.2rem;
+                top: 1.2rem;
+                left: 27.5rem;
+            }
+        }
+    }
+
+    .event-card__content {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        padding: 0 1.6rem 1.6rem 1.6rem;
+
+        @include mobile {
+            padding: 0 1.2rem 1.2rem 1.2rem;
+            gap: 2rem;
+        }
+
+        .event-card__header {
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+
+            .event-card__header__top {
+                display: flex;
+                justify-content: space-between;
+
+                // .event-card__tag {
+                //     gap: 1rem;
+                // }
+
+                .event-card__timer {
+                    display: inline-flex;
+                    gap: 0.8rem;
+
+                    .icon {
+                        width: 2rem;
+                        height: 2rem;
+
+                        @include mobile {
+                            width: 1.6rem;
+                            height: 1.6rem;
+                        }
+                    }
+
+                    .event-card__timer-days {
+                        @include text-sm-bold;
+                        color: var(--text-secondary-promo-color);
+                    }
+
+                    &--urgent {
+                        color: var(--suai-red-default-color);
+
+                        .icon-alarm-plus {
+                            content: url('../../icons/alarm-plus-red.svg');
+                        }
+                    }
+                }
+            }
+
+            .event-card__title {
+                @include text-h4;
+                color: var(--text-color);
+            }
+        }
+
+        .event-card__info {
+            @include text-body;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            padding-top: 2rem;
+            border: 1px solid var(--divider-color);
+            color: var(--text-color);
+
+            .event-card__time {
+                display: flex;
+                gap: 1.2rem;
+
+                .icon {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    background-image: url('../../icons/clock.svg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            .event-card__location {
+                display: flex;
+                gap: 1.2rem;
+
+                .icon {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    background-image: url('../../icons/map-pin.svg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            .event-card__participants {
+                display: flex;
+                gap: 1.2rem;
+
+                .icon-users-group {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    background-image: url('../../icons/users-group.svg');
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+mixin newsCard(props = {})
+    -
+        var {
+            tag = 'div',
+            title = 'Заголовок H4',
+            date = { day: '', month: '' },
+            location = ''
+        } = props
+
+    #{tag}.news-card&attributes(attributes)
+        .news-card__header
+        .news-card__content
+            h4.news-card__title= title
+            p.news-card__meta
+                span= `${date.day} ${date.month}`
+                | &nbsp;|&nbsp;
+                span= location

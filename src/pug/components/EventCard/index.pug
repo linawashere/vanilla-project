@@ -1,0 +1,46 @@
+include ../../components/tag
+
+mixin eventCard(props = {})
+    -
+        var {
+            tag = 'div',
+            title = 'Event Title',
+            date = { day: '', month: '', year: '' },
+            time = '',
+            location = '',
+            participants = ''
+        } = props
+
+        var eventDate = `${date.year}-${date.month}-${date.day}`;
+
+        var attributes = {
+            'data-event-date': eventDate,
+        };
+
+    #{tag}.event-card&attributes(attributes)
+        .event-card__top.icon-event-card-img
+            .event-card__button
+                i.icon.icon-button-bookmark
+            .event-card__date
+                span= date.day
+                span= date.month
+        .event-card__content
+            .event-card__header
+                .event-card__header__top
+                    .event-card__tag
+                        +tag({ type: 'educational-materials', color: 'parenting' })
+                            | Наука
+                    .event-card__timer
+                        i.icon.icon-alarm-plus
+                        span.event-card__timer-days
+                h4.event-card__title= title
+            .event-card__info
+                .event-card__time
+                    i.icon.icon-clock
+                    span= time
+                .event-card__location
+                    i.icon.icon-map-pin
+                    span= location
+                .event-card__participants
+                    i.icon.icon-users-group
+                    span= participants

@@ -1,0 +1,20 @@
+mixin accordion(props = {})
+    -
+        var {
+            tag = 'div',
+            title = 'Accordion Title',
+            isExpanded = false,
+        } = props
+
+    #{tag}.accordion(
+        class=isExpanded ? 'accordion--expanded' : ''
+    )&attributes(attributes)
+        .accordion__header
+            button.accordion__toggle
+                span.accordion__title= title
+                .accordion__button__container
+                button.accordion__button
+                    i.icon(class='icon-plus')
+        .accordion__content
+            if block
+                block
