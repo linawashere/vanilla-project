@@ -3,6 +3,7 @@
 @import './global/reset.scss';
 @import './global/typography.scss';
 @import './global/colors.scss';
+@import './utils/breakpoints.scss';
 
 @import './utils/icons.scss';
 
@@ -22,3 +23,5 @@
 @import './components/accordion.scss';
 @import './components/event-card.scss';
 @import './components/news-card.scss';
+@import './components/educational-materials.scss';
+@import './components/graduate-card.scss';

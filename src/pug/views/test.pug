@@ -7,15 +7,17 @@ include ../components/ArrowButton/index
 include ../components/IconButton/index
 include ../components/FlexButton/index
 include ../components/CloseMobile/index
-include ../components/alert
-include ../components/file
-include ../components/tab
-include ../components/link
-include ../components/pagination
-include ../components/tag
+include ../components/Alert/index
+include ../components/File/index
+include ../components/Tab/index
+include ../components/Link/index
+include ../components/Pagination
+include ../components/Tag
 include ../components/Accordion/index
 include ../components/EventCard/index
 include ../components/NewsCard/index
+include ../components/EducationalMaterials/index
+include ../components/GraduateCard/index
 
 block variables
     - var title = 'EXAMPLE'
@@ -110,6 +112,7 @@ block content
             +accordion({ title: 'Как восстановить пароль?', isExpanded: true })
                 p Нажмите на ссылку "Забыли пароль?" и следуйте инструкциям.
         .column(style="flex: 1; min-width: 300px; background-color: var(--gray-color-2);")
+            h4 Event card
             +eventCard({
                 title: 'Название мероприятия',
                 date: { day: '30', month: '09', year: '2025' },
@@ -118,8 +121,22 @@ block content
                 participants: '500 человек'
             })
         .column(style="flex: 1; min-width: 300px; background-color: var(--gray-color-2);")
+            h4 News card
             +newsCard({
                 title: 'Заголовок H4',
                 date: { day: '31', month: 'октября' },
                 location: 'Университет'
             })
+        .column(style="flex: 1; min-width: 700px; background-color: var(--gray-color-2);")
+            h4 Educational Materials Card
+            +educationalMaterials({
+                tag: 'Внеучебные',
+                title: 'Образовательный материал №1',
+                description: 'Второй день был визионерским: студенты формировали видение идеального амбассадора и выявляли свои точки роста для приближения к этому образу.'
+            })
+        .column(style="flex: 1; min-width: 500px; background-color: var(--gray-color-2);")
+            h4 Graduate Card
+            +graduateCard({
+                name: 'Константинопольский Константин',
+                description: 'Здание находится на набережной реки Мойки напротив Юсуповского дворца, рядом с Центральным военно-морским музеем и Санкт-Петербургским Почтамтом.'
+})

@@ -1,0 +1,80 @@
+.educational-materials {
+    background-color: var(--card-color);
+    padding: 1.6rem;
+    border-radius: 4rem;
+    width: 67rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+
+    &__header {
+        border-radius: 2.8rem;
+        position: relative;
+        background-image: url('../../icons/event-card-img.svg');
+        background-size: cover;
+        background-position: center;
+        width: 63.8rem;
+        height: 37.429rem;
+
+        @include mobile {
+            width: 32.7rem;
+            height: 18.8rem;
+            border-radius: 2.4rem
+        }
+
+        .educational-materials__tag {
+            @include text-button;
+            color: var(--text-color);
+            padding: 0.8rem 1.2rem;
+            display: flex;
+            gap: 0.8rem;
+            border-radius: 1.6rem;
+            background-color: var(--card-color);
+            position: absolute;
+            top: 1.6rem;
+            left: 1.6rem;
+
+            @include mobile {
+                padding: 0.6rem 1.2rem;
+                border-radius: 1.2rem
+            }
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        padding: 0 1.6rem 1.6rem 1.6rem;
+
+        @include mobile {
+            padding: 0 0.8rem 0.8rem 0.8rem;
+            gap: 2rem;
+        }
+
+        .educational-materials__title {
+            @include text-h3;
+            color: var(--text-color);
+        }
+
+        .educational-materials__description {
+            @include text-body;
+            color: var(--text-secondary-promo-color);
+        }
+    }
+
+    @include from-mobile {
+        &:hover {
+            .educational-materials__title {
+                color: var(--ultramarine-default-color);
+            }
+        }
+    }
+
+    @include mobile {
+        width: 35.1rem;
+        border-radius: 3.2rem;
+        padding: 1.2rem;
+        gap: 2.4rem;
+    }
+}

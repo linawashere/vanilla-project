@@ -1,0 +1,57 @@
+.graduate-card {
+    width: 44rem;
+    height: 61.8rem;
+    border-radius: 4rem;
+    padding: 1.6rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 3.2rem;
+    background-image: url(../../icons/man.jpg);
+    background-size: cover;
+    background-position: center;
+
+    &__content {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+        border-radius: 2.8rem;
+        background-color: var(--card-color);
+        transition: all 0.3s ease;
+
+        @include mobile {
+            border-radius: 2.4rem;
+            padding: 1.6rem;
+            gap: 1.6rem;
+        }
+
+        .graduate-card__title {
+            @include text-h4;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .graduate-card__description {
+            @include text-sm;
+            display: none;
+            color: var(--text-color);
+            text-align: center;
+        }
+    }
+
+    @include from-mobile {
+        &:hover {
+            .graduate-card__description {
+                display: block;
+            }
+        }
+    }
+
+    @include mobile {
+        width: 33.5rem;
+        max-width: 59rem;
+        border-radius: 3.2rem;
+        padding: 1.6rem;
+        gap: 3.2rem;
+    }
+}

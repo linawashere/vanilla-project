@@ -1,0 +1,14 @@
+mixin educationalMaterials(props = {})
+    -
+        var {
+            tagName = 'div',
+            title = 'Educational Material Title',
+            description = '',
+        } = props
+
+    #{tagName}.educational-materials&attributes(attributes)
+        .educational-materials__header
+            span.educational-materials__tag= props.tag
+        .educational-materials__info
+            h3.educational-materials__title= title
+            p.educational-materials__description= description
