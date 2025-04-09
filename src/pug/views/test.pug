@@ -11,13 +11,14 @@ include ../components/Alert/index
 include ../components/File/index
 include ../components/Tab/index
 include ../components/Link/index
-include ../components/Pagination
-include ../components/Tag
+include ../components/Pagination/index
+include ../components/Tag/index
 include ../components/Accordion/index
 include ../components/EventCard/index
 include ../components/NewsCard/index
 include ../components/EducationalMaterials/index
 include ../components/GraduateCard/index
+include ../components/TextContent/index
 
 block variables
     - var title = 'EXAMPLE'
@@ -28,7 +29,7 @@ block content
 
     .example-container(style="display: flex; flex-wrap: wrap; gap: 2rem;")
         //- Кнопки
-        .column(style="flex: 1; min-width: 500px;")
+        .column(style="flex: 1; ")
             h4 Buttons
             +button Example
             +button({contrast: true}) Example
@@ -36,18 +37,18 @@ block content
             +button({isDisabled: true}) Example
 
         //- Заголовки
-        .column(style="flex: 1; min-width: 500px;")
+        .column(style="flex: 1; ")
             h4 Headlines
             +headline({ iconName: 'button' }) Example
             +headline({ iconName: 'arrow', isDisabled: true }) Example
 
         //- Меню
-        .column(style="flex: 1; min-width: 300px;")
+        .column(style="flex: 1; ")
             h4 Menu
             +menuItem({ iconName: 'icon-right' }) Menu Item
 
         //- Стрелочные кнопки
-        .column(style="flex: 1; min-width: 300px;")
+        .column(style="flex: 1; ")
             h4 Arrow Buttons
             +arrowButton()
             +arrowButton({ light: true })
@@ -57,7 +58,7 @@ block content
             +arrowButton({ contrast: true, isDisabled: true })
 
         //- Файлы
-        .column(style="flex: 1; min-width: 300px;")
+        .column(style="flex: 1; ")
             h4 Files
             +actionButton({ type: 'bookmark' })
             +actionButton({ type: 'play' })
@@ -65,7 +66,7 @@ block content
                 | File
 
         //- Flex Buttons, Close Mobile
-        .column(style="flex: 1; min-width: 500px;")
+        .column(style="flex: 1; ")
             h4 Flex Buttons, Close Mobile
             +flexButton({ iconNameLeft: 'arrow-up-left', iconNameRight: 'arrow-up-right' }) Button Text
             +flexButton({ iconNameLeft: 'arrow-up-left' }) Button Text
@@ -75,7 +76,7 @@ block content
             +closeMobile()
 
         //- Алерты
-        .column(style="flex: 1; min-width: 600px;")
+        .column(style="flex: 1; ")
             h4 Alerts
             +alert({ type: 'success' })
                 | This is a success alert
@@ -83,7 +84,7 @@ block content
                 | This is an error alert
 
         //- Табы и пагинация
-        .column(style="flex: 1; min-width: 300px;")
+        .column(style="flex: 1; ")
             h4 Tabs, Pagination
             +tab({ tag: 'button' })
                 | Link Tab
@@ -93,7 +94,7 @@ block content
             +pagination({ type: 'icon', isDisabled: true })
 
         //- Ссылки и теги
-        .column(style="flex: 1; min-width: 300px;")
+        .column(style="flex: 1; ")
             h4 Links, Tags
             +link({ type: 'text', size: 's' })
                 | Read more
@@ -105,13 +106,13 @@ block content
                 | Download file
             +tag({ type: 'educational-materials', color: 'parenting' })
                 | Parenting Tag
-        .column(style="flex: 1; min-width: 900px;     background-color: var(--gray-color-2);")
+        .column(style="flex: 1;     background-color: var(--gray-color-2);")
             h4 Accordion
             +accordion({ title: 'Как зарегистрироваться на сайте?', isExpanded: false })
                 p Для регистрации перейдите на страницу входа и заполните форму.
             +accordion({ title: 'Как восстановить пароль?', isExpanded: true })
                 p Нажмите на ссылку "Забыли пароль?" и следуйте инструкциям.
-        .column(style="flex: 1; min-width: 300px; background-color: var(--gray-color-2);")
+        .column(style="flex: 1; background-color: var(--gray-color-2);")
             h4 Event card
             +eventCard({
                 title: 'Название мероприятия',
@@ -120,23 +121,91 @@ block content
                 location: 'ГУАП, Ленсовета 14, актовый зал',
                 participants: '500 человек'
             })
-        .column(style="flex: 1; min-width: 300px; background-color: var(--gray-color-2);")
+        .column(style="flex: 1; background-color: var(--gray-color-2);")
             h4 News card
             +newsCard({
                 title: 'Заголовок H4',
                 date: { day: '31', month: 'октября' },
                 location: 'Университет'
             })
-        .column(style="flex: 1; min-width: 700px; background-color: var(--gray-color-2);")
+        .column(style="flex: 1; background-color: var(--gray-color-2);")
             h4 Educational Materials Card
             +educationalMaterials({
                 tag: 'Внеучебные',
                 title: 'Образовательный материал №1',
                 description: 'Второй день был визионерским: студенты формировали видение идеального амбассадора и выявляли свои точки роста для приближения к этому образу.'
             })
-        .column(style="flex: 1; min-width: 500px; background-color: var(--gray-color-2);")
+        .column(style="flex: 1; background-color: var(--gray-color-2);")
             h4 Graduate Card
             +graduateCard({
                 name: 'Константинопольский Константин',
                 description: 'Здание находится на набережной реки Мойки напротив Юсуповского дворца, рядом с Центральным военно-морским музеем и Санкт-Петербургским Почтамтом.'
-})
+            })
+        .column(style="flex: 1; background-color: var(--gray-color-2);")
+            +textContent({
+                content: `
+                    <p>Из теории Гераклита, даже если она применима лишь к чувственным объектам, вытекает определение знания как восприятия и следует, что знание бывает о том, что находится в становлении, а не о том, что есть.</p>
+                    <p>Из теории Гераклита, даже если она применима лишь к чувственным объектам, вытекает определение знания как восприятия и следует, <a href="">что знание бывает</a> о том, что находится в становлении, а не о том, что есть.</p>
+                    <ul>
+                        <li>Нам говорят, что поскольку 6 больше 4, но меньше 12,6 одновременно и велико и мало, что является противоречием.</li>
+                        <li>Нам говорят, что поскольку 6 больше 4, но меньше 12,6 одновременно и велико и мало, что является противоречием.</li>
+                        <li>Но через несколько лет Сократ будет ниже Теэтета.</li>
+                        <li>Из теории Гераклита, даже если она применима лишь к чувственным объектам, вытекает определение знания как восприятия и следует, что знание бывает о том, что находится в становлении, а не о том, что есть.</li>
+                        <li>В этом вопросе имеются некоторые затруднения совершенно элементарного характера<ul>
+                                <li>Нам говорят, что поскольку 6 больше 4, но меньше 12,6 одновременно и велико и мало, что является противоречием.</li>
+                                <li>Сократ теперь выше Теэтета, который является не вполне еще выросшим юношей;</li>
+                                <li>Но через несколько лет Сократ будет ниже Теэтета.</li>
+                            </ul>
+                        </li>
+                        <li>Поэтому Сократ одновременно и высокого и низкого роста.</li>
+                    </ul>
+                    <ol>
+                        <li>Знание есть восприятие;</li>
+                        <li>Человек есть мера всех вещей;</li>
+                        <li>Все находится в состоянии постоянного движения.</li>
+                    </ol>
+                    <figure class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Название мероприятия</th>
+                                    <th>Дата</th>
+                                    <th>Время</th>
+                                    <th>Организатор</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>III Международный форум «Математические методы и модели в высокотехнологичном производстве»</td>
+                                    <td>28 октября</td>
+                                    <td>12:00 - 17:00</td>
+                                    <td>Центр развития профессиональных компетенций ГУАП</td>
+                                </tr>
+                                <tr>
+                                    <td>Игра «Квиз» для всех студентов Санкт-Петербурга</td>
+                                    <td>28 октября</td>
+                                    <td>12:00 - 17:00</td>
+                                    <td>Центр развития профессиональных компетенций ГУАП</td>
+                                </tr>
+                                <tr>
+                                    <td>11-я международная научная конференция «Философия и культура информационного общества»</td>
+                                    <td>28 октября</td>
+                                    <td>12:00 - 17:00</td>
+                                    <td>Центр развития профессиональных компетенций ГУАП</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
+                    <figure class="image"><img src="<https://images.unsplash.com/photo-1741851374430-d242e0dcd70c?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D>">
+                        <figcaption>Подписи выводятся шрифтом уменьшенного кегля. Точка в конце подписи не ставится</figcaption>
+                    </figure>
+                    <h2>
+                        Заголовок второго уровня
+                    </h2>
+                    <h3>
+                    Заголовок третьего уровня
+                    </h3>
+
+                `
+            })
+        
