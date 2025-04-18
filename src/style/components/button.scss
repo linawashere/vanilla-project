@@ -38,7 +38,7 @@
     background-color: var(--card-color);
   }
 
-  .button--disabled {
+  &.button--disabled {
     color: var(--text-blind-color);
     background-color: transparent !important;
     border: 1px solid var(--gray-color-3);

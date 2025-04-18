@@ -3,6 +3,7 @@ mixin tag(props = {})
         var {
             tag = 'button',
             type = '',
+            color = ''
         } = props
 
     #{tag}.tag(class=`tag--${type} tag--${color}`)&attributes(attributes)
