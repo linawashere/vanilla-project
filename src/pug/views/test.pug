@@ -19,6 +19,7 @@ include ../components/NewsCard/index
 include ../components/EducationalMaterials/index
 include ../components/GraduateCard/index
 include ../components/TextContent/index
+include ../components/Select/index
 
 block variables
     - var title = 'EXAMPLE'
@@ -208,4 +209,22 @@ block content
 
                 `
             })
-        
+        .column(style="flex: 1; height: 500px; background-color: var(--gray-color-1);")
+            h4 Select
+            +select({
+                options: [
+                    { value: 'Вариант 1', label: 'Вариант 1' },
+                    { value: 'Вариант 2', label: 'Вариант 2' },
+                    { value: 'Вариант 3', label: 'Вариант 3' }
+                ],
+                placeholder: 'Выберите из списка',
+                isDisabled: true
+            })
+            +select({
+                options: [
+                    { value: 'Вариант 1', label: 'Вариант 1' },
+                    { value: 'Вариант 2', label: 'Вариант 2' },
+                    { value: 'Вариант 3', label: 'Вариант 3' }
+                ],
+                placeholder: 'Выберите из списка'
+            })
