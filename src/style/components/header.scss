@@ -1,0 +1,192 @@
+.header {
+    @include text-button;
+    width: 100vw;
+    height: 11rem;
+    position: relative;
+    display: flex;
+
+    @include tablet {
+        .header__menu-item a {
+            font-size: 0.9rem;
+            line-height: 1.4rem;
+            padding: 1rem;
+        }
+
+        .header__logo img {
+            width: 10.5rem;
+            height: 3.8rem;
+        }
+
+        .header__user {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .header__user img {
+            width: 2.2rem;
+            height: 2.2rem;
+        }
+    }
+
+    @include mobile {
+        height: 7.2rem;
+        padding: 1.6rem 1.2rem;
+    }
+
+    &__container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        @include mobile {
+            justify-content: space-between;
+        }
+    }
+
+    &__logo {
+        img {
+            width: 12.5rem;
+            height: 3.8rem;
+            object-fit: contain;
+
+            @include mobile {
+                width: 9rem;
+                height: 2.7rem;
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: 1.6rem;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__menu {
+        list-style-type: none;
+        display: flex;
+        gap: 1.6rem;
+        color: var(--text-color);
+    }
+
+    &__menu-item {
+        display: flex;
+        gap: 0.8rem;
+
+        a {
+            @include text-button;
+            padding: 1.2rem;
+            border-radius: 1.2rem;
+            color: var(--text-color);
+            transition: color 0.3s ease-out;
+
+            @include from-mobile {
+                &:hover {
+                    color: var(--ultramarine-default-color);
+                    background-color: var(--gray-color-4);
+                }
+            }
+        }
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        border-radius: 1.2rem;
+        border: 1px solid var(--border-color);
+        padding: 0.4rem;
+        width: 4rem;
+        height: 4rem;
+        gap: 1rem;
+
+        @include mobile {
+            display: none;
+        }
+
+        img {
+            width: 3.2rem;
+            height: 3.2rem;
+            object-fit: contain;
+        }
+    }
+
+    &__mobile-menu {
+        display: none;
+        width: 4rem;
+        height: 4rem;
+
+        @include mobile {
+            display: flex;
+        }
+
+        &-toggle {
+            position: relative;
+            padding: 1rem;
+            background-color: var(--card-color);
+            border-radius: 1.2rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: all 0.5s ease-out;
+
+            .icon-menu {
+                width: 2rem;
+                height: 2rem;
+                background-image: url('../../icons/menu.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            &.active {
+                background-color: var(--ultramarine-default-color);
+
+                .icon-menu {
+                    background-image: url('../../icons/x.svg');
+                }
+            }
+        }
+
+        .lk {
+            display: none;
+            padding-bottom: 4rem;
+            gap: 0.8rem;
+        }
+
+        &-list {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            overflow-y: hidden;
+            gap: 0.8rem;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 100;
+            transition: all 0.5s ease-out;
+            background-color: var(--card-color);
+        }
+
+        &-item {
+            padding: 1.2rem;
+            border-radius: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                @include text-button;
+                color: var(--text-color);
+            }
+        }
+    }
+}
+
+.no-scroll {
+    overflow: hidden;
+    // height: 100vh;
+}
