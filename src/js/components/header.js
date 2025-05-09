@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toggle.addEventListener('click', () => {
         toggle.classList.toggle('active');
-        menuList.style.display = toggle.classList.contains('active') ? 'flex' : 'none';
+        menuList.classList.toggle('active');
+        // menuList.style.display = toggle.classList.contains('active') ? 'flex' : 'none';
         lk.style.display = toggle.classList.contains('active') ? 'flex' : 'none';
         document.body.classList.toggle('no-scroll');
     });
