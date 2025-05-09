@@ -112,10 +112,19 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                gap: 1rem;
+
+                .event-card__tags {
+                    display: flex;
+                    gap: 0.8rem;
+                    flex-wrap: wrap;
+                }
 
                 .event-card__timer {
                     display: inline-flex;
                     gap: 0.8rem;
+                    flex: 1;
+                    justify-content: flex-end;
 
                     .icon {
                         width: 2rem;
@@ -159,40 +168,57 @@
             border-top: 1px solid var(--divider-color);
             color: var(--text-color);
 
-            .event-card__time {
+            // .event-card__time {
+            //     display: flex;
+            //     gap: 1.2rem;
+
+            //     .icon {
+            //         width: 2.4rem;
+            //         height: 2.4rem;
+            //         background-image: url('../../icons/clock.svg');
+            //         background-size: cover;
+            //         background-repeat: no-repeat;
+            //     }
+            // }
+
+            // .event-card__location {
+            //     display: flex;
+            //     gap: 1.2rem;
+
+            //     .icon {
+            //         width: 2.4rem;
+            //         height: 2.4rem;
+            //         background-image: url('../../icons/map-pin.svg');
+            //         background-size: cover;
+            //         background-repeat: no-repeat;
+            //     }
+            // }
+
+            // .event-card__participants {
+            //     display: flex;
+            //     gap: 1.2rem;
+
+            //     .icon-users-group {
+            //         width: 2.4rem;
+            //         height: 2.4rem;
+            //         background-image: url('../../icons/users-group.svg');
+            //     }
+            // }
+
+            &-item {
                 display: flex;
                 gap: 1.2rem;
-
+    
                 .icon {
                     width: 2.4rem;
                     height: 2.4rem;
-                    background-image: url('../../icons/clock.svg');
                     background-size: cover;
                     background-repeat: no-repeat;
-                }
-            }
-
-            .event-card__location {
-                display: flex;
-                gap: 1.2rem;
-
-                .icon {
-                    width: 2.4rem;
-                    height: 2.4rem;
-                    background-image: url('../../icons/map-pin.svg');
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                }
-            }
-
-            .event-card__participants {
-                display: flex;
-                gap: 1.2rem;
-
-                .icon-users-group {
-                    width: 2.4rem;
-                    height: 2.4rem;
-                    background-image: url('../../icons/users-group.svg');
+    
+                    @include mobile {
+                        width: 2rem;
+                        height: 2rem;
+                    }
                 }
             }
         }

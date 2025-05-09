@@ -6,9 +6,8 @@ mixin eventCard(props = {})
             tag = 'div',
             title = 'Event Title',
             date = { day: '', month: '', year: '' },
-            time = '',
-            location = '',
-            participants = ''
+            infoItems = [],
+            tags = []
         } = props
 
         var eventDate = `${date.year}-${date.month}-${date.day}`;
@@ -27,20 +26,18 @@ mixin eventCard(props = {})
         .event-card__content
             .event-card__header
                 .event-card__header__top
-                    .event-card__tag
-                        +tag({ type: 'educational-materials', color: 'parenting' })
-                            | Наука
+                    if tags.length > 0
+                        .event-card__tags
+                            each tagData in tags
+                                .event-card__tag
+                                    +tag({ type: tagData.type, color: tagData.color })
+                                        | #{tagData.label}
                     .event-card__timer
                         i.icon.icon-alarm-plus
                         span.event-card__timer-days
                 h4.event-card__title= title
             .event-card__info
-                .event-card__time
-                    i.icon.icon-clock
-                    span= time
-                .event-card__location
-                    i.icon.icon-map-pin
-                    span= location
-                .event-card__participants
-                    i.icon.icon-users-group
-                    span= participants
+                each item in infoItems
+                    div(class=`event-card__info-item event-card__info-item--${item.icon}`)
+                        i.icon(class=`icon-${item.icon}`)
+                        span= item.text

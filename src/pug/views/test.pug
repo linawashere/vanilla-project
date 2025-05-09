@@ -122,9 +122,14 @@ block content
             +eventCard({
                 title: 'Название мероприятия',
                 date: { day: '03', month: '05', year: '2025' },
-                time: '12:00 - 13:00',
-                location: 'ГУАП, Ленсовета 14, актовый зал',
-                participants: '500 человек'
+                infoItems: [
+                { icon: 'clock', text: '12:00 - 18:00' },
+                { icon: 'map-pin', text: 'ГУАП, Ленсоветова 14, актовый зал' },
+                { icon: 'users-group', text: '500 человек' }
+                ],
+                tags: [{ type: 'educational-materials', color: 'parenting', label: 'Наука' },
+                { type: 'educational-materials', color: 'parenting', label: 'Наука' },
+                ]
             })
         .column(style="flex: 1; background-color: var(--gray-color-2);")
             h4 News card
