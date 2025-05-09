@@ -17,6 +17,7 @@
     }
 
     .headline__inner {
+        max-width: 35rem;
         display: flex;
         align-items: center;
         gap: 3.2rem;
@@ -26,6 +27,13 @@
             gap: 2rem;
             padding-left: 2rem;
         }
+    }
+
+    .headline__text {
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
     }
 
     &:hover {
