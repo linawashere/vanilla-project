@@ -1,3 +1,5 @@
+include ../Icon/index
+
 mixin flexButton(props={})
     -
         var {
@@ -5,15 +7,17 @@ mixin flexButton(props={})
             iconNameLeft = null,
             iconNameRight = null,
             isDisabled = false,
+            href =''
         } = props
 
     #{tag}.flex-button(
         class=[{ 'flex-button--disabled': isDisabled }]
+        href=(tag === 'a' ? href : undefined)
     )&attributes(attributes)
         .flex-button__inner
             if iconNameLeft
-                i.icon(class=`icon-${iconNameLeft}`)
+                +icon(iconNameLeft)
             span.flex-button__text
                 block
             if iconNameRight
-                i.icon(class=`icon-${iconNameRight}`)
+                +icon(iconNameRight)
