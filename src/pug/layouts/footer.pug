@@ -1,0 +1,50 @@
+include ../components/Headline/index
+include ../components/FlexButton/index
+include ../components/Icon/index
+include ../components/Hint//index
+
+mixin footer(props = {})
+    -
+        var {
+            tag = 'footer',
+        } = props
+
+    #{tag}.footer
+        .footer__container
+            nav.footer__nav
+                ul.footer__menu
+                    li.footer__menu-item
+                        a(href='#')
+                            img(src='../../icons/logo-black.svg' alt='Logo')
+                    li.footer__menu-item
+                        a(href='#') Контакты
+                    li.footer__menu-item
+                        +flexButton({ iconNameRight: 'arrow-right' }) Основной сайт
+                ul.footer__contacts
+                    li.footer__contacts-item
+                        +flexButton({ 
+                        tag: 'a',    
+                        iconNameLeft: 'tg',
+                        href: '#' }) company
+                    +hint({ text: 'Проректор по учебной работе — Константинопольский Константин Константинович' })
+                    li.footer__contacts-item
+                        +flexButton({ 
+                        tag: 'a',    
+                        iconNameLeft: 'tg',
+                        href: '#' }) company
+                    +hint({ text: 'Проректор по учебной работе — Константинопольский Константин Константинович' })
+                    li.footer__contacts-item
+                        a(href='mailto:#') company@gmail.com
+                ul.footer__socials 
+                    li.footer__socials-item 
+                        a(href='#')
+                            +icon('vk')
+                    li.footer__socials-item 
+                        a(href='#')
+                            +icon('tg')
+            .footer__bottom
+                .footer__bottom-copyright
+                    span © 2023 Онлайн-площадка
+                .footer__bottom-pw
+                    a(href='#')
+                        +icon('paraweb-logo')

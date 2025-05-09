@@ -1,0 +1,170 @@
+body {
+    background-color: #ccc; // потом убрать
+}
+
+.footer {
+    @include text-button;
+    width: 100vw;
+    height: 17.7rem;
+    position: relative;
+    padding: 0 4rem 2.4rem 4rem;
+
+    @include tablet {
+        font-size: 1rem;
+
+        .flex-button {
+            font-size: 1rem;
+        }
+
+        .footer__menu,
+        .footer__contacts,
+        .footer__socials {
+            gap: 2rem;
+        }
+
+        .footer__menu-item:nth-child(1) {
+            width: 10.5rem !important;
+            height: 3.8rem;
+        }
+    }
+
+    @include mobile {
+        width: 35.1rem;
+        height: auto;
+        margin: 0 auto;
+
+        &__nav,
+        &__menu,
+        &__contacts {
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        .footer__menu-item a img {
+            content: url('../../icons/logo-group.svg');
+        }
+
+        .footer__menu,
+        .footer__contacts,
+        .footer__socials {
+            align-items: flex-start;
+            gap: 1.6rem;
+        }
+
+        .footer__socials {
+            width: 2.4rem;
+            gap: 1.2rem;
+        }
+
+        .flex-button {
+            padding: 0;
+        }
+
+        .footer__container {
+            gap: 2.4rem;
+        }
+
+        .footer__nav {
+            align-items: center;
+            padding: 2.4rem;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+    }
+
+    .footer__menu-item:nth-child(1) {
+        @include text-button;
+        width: 12.5rem;
+        height: 3.8rem;
+        display: flex;
+        align-items: center;
+
+        img {
+            object-fit: contain;
+
+            @include mobile {
+                width: 9.03rem;
+                height: 2rem;
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--card-color);
+        border-radius: 3.2rem;
+        padding: 3.2rem;
+    }
+
+    &__menu,
+    &__contacts,
+    &__socials {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        gap: 4rem;
+
+        a {
+            color: var(--text-color);
+        }
+    }
+
+    &__contacts,
+    &__socials {
+        gap: 2rem;
+    }
+
+    .footer__socials-item {
+        .icon {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+
+        a {
+            height: 2.4rem;
+        }
+    }
+
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-pw {
+            .icon-paraweb-logo {
+                width: 9.4rem;
+                height: 2rem;
+
+                @include mobile {
+                    width: 7.52rem;
+                    height: 1.6rem;
+                }
+            }
+
+            a {
+                display: flex;
+            }
+        }
+    }
+
+    &__contacts {
+        .flex-button .icon {
+            content: '';
+        }
+
+        &-item {
+            display: flex;
+        }
+    }
+
+    &__bottom-copyright span {
+        @include text-caption;
+        color: var(--text-secondary-promo-color);
+    }
+}
