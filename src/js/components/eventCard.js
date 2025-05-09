@@ -7,12 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const eventDate = new Date(dateAttr);
             const today = new Date();
 
-            // Подсчет оставшихся дней
             const remainingDays = calculateRemainingDays(eventDate, today);
 
             const timerDaysElement = card.querySelector('.event-card__timer-days');
 
-            // Выводим количество дней
             if (timerDaysElement) {
                 timerDaysElement.textContent = `Через ${remainingDays} дн.`;
 
