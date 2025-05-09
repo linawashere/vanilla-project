@@ -3,7 +3,7 @@ mixin newsCard(props = {})
         var {
             tag = 'div',
             title = 'Заголовок H4',
-            date = { day: '', month: '' },
+            date = '',
             location = ''
         } = props
 
@@ -12,6 +12,5 @@ mixin newsCard(props = {})
         .news-card__content
             h4.news-card__title= title
             p.news-card__meta
-                span= `${date.day} ${date.month}`
-                | &nbsp;|&nbsp;
+                span= date
                 span= location

@@ -45,14 +45,22 @@
     &__meta {
         @include text-sm;
         color: var(--text-secondary-promo-color);
+
+        span:nth-child(1) {
+            border-right: 1px solid var(--border-color);
+            padding-right: 0.8rem;
+        }
+
+        span:nth-child(2) {
+            padding-left: 0.8rem;
+        }
     }
 
     @include from-mobile {
         &:hover {
-            &__title {
+            .news-card__title {
                 color: var(--ultramarine-default-color);
             }
         }
     }
-
 }
