@@ -3,10 +3,13 @@ mixin graduateCard(props = {})
         var {
             tag = 'div',
             name = 'Name',
-            description = ''
+            description = '',
+            link = '#'
         } = props
 
-    #{tag}.graduate-card&attributes(attributes)
+    #{tag}.graduate-card(
+        href=(tag === 'a' ? link : false)
+    )&attributes(attributes)
         .graduate-card__content
             h4.graduate-card__title= name
             p.graduate-card__description= description
