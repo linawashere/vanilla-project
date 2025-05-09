@@ -7,10 +7,7 @@ mixin link(props = {})
         } = props
 
     #{tag}.link(
-        class=[
-            `link--${type}`,
-            `link--${size}`
-        ]
+        class=[type, size]
     )&attributes(attributes)
         i.icon
         span.link__text
