@@ -20,15 +20,19 @@ include ../components/EducationalMaterials/index
 include ../components/GraduateCard/index
 include ../components/TextContent/index
 include ../components/Select/index
+include ../layouts/header
+include ../layouts/footer
 
 block variables
     - var title = 'EXAMPLE'
 
 block content
-    .container
+    +header()
+    main.main
+        .container
         h1!= title
 
-    .example-container(style="display: flex; flex-wrap: wrap; gap: 2rem;")
+        .example-container(style="display: flex; flex-wrap: wrap; gap: 2rem;")
         //- Кнопки
         .column(style="flex: 1; ")
             h4 Buttons
@@ -40,7 +44,7 @@ block content
         //- Заголовки
         .column(style="flex: 1; ")
             h4 Headlines
-            +headline({ iconName: 'button' }) Example
+            +headline({ iconName: 'button' }) ExampleExampleExampleExampleExampleExample
             +headline({ iconName: 'arrow', isDisabled: true }) Example
 
         //- Меню
@@ -110,14 +114,14 @@ block content
         .column(style="flex: 1;     background-color: var(--gray-color-2);")
             h4 Accordion
             +accordion({ title: 'Как зарегистрироваться на сайте?', isExpanded: false })
-                p Для регистрации перейдите на страницу входа и заполните форму.
+                //- p Для регистрации перейдите на страницу входа и заполните форму.
             +accordion({ title: 'Как восстановить пароль?', isExpanded: true })
                 p Нажмите на ссылку "Забыли пароль?" и следуйте инструкциям.
         .column(style="flex: 1; background-color: var(--gray-color-2);")
             h4 Event card
             +eventCard({
                 title: 'Название мероприятия',
-                date: { day: '30', month: '09', year: '2025' },
+                date: { day: '03', month: '05', year: '2025' },
                 time: '12:00 - 13:00',
                 location: 'ГУАП, Ленсовета 14, актовый зал',
                 participants: '500 человек'
@@ -126,7 +130,7 @@ block content
             h4 News card
             +newsCard({
                 title: 'Заголовок H4',
-                date: { day: '31', month: 'октября' },
+                date: '31 октября',
                 location: 'Университет'
             })
         .column(style="flex: 1; background-color: var(--gray-color-2);")
@@ -136,11 +140,19 @@ block content
                 title: 'Образовательный материал №1',
                 description: 'Второй день был визионерским: студенты формировали видение идеального амбассадора и выявляли свои точки роста для приближения к этому образу.'
             })
-        .column(style="flex: 1; background-color: var(--gray-color-2);")
+        .column(style="flex: 1; background-color: var(--gray-color-4);")
             h4 Graduate Card
             +graduateCard({
                 name: 'Константинопольский Константин',
-                description: 'Здание находится на набережной реки Мойки напротив Юсуповского дворца, рядом с Центральным военно-морским музеем и Санкт-Петербургским Почтамтом.'
+                description: 'Здание находится на набережной реки Мойки напротив Юсуповского дворца, рядом с Центральным военно-морским музеем и Санкт-Петербургским Почтамтом.',
+                icon: 'event-card-img'
+            })
+            +graduateCard({
+                tag: 'a',
+                name: 'Константинопольский Константин',
+                description: 'Здание находится на набережной реки Мойки напротив Юсуповского дворца, рядом с Центральным военно-морским музеем и Санкт-Петербургским Почтамтом.',
+                link: 'https://example.com',
+                icon: 'event-card-img'
             })
         .column(style="flex: 1; background-color: var(--gray-color-2);")
             +textContent({
@@ -228,3 +240,5 @@ block content
                 ],
                 placeholder: 'Выберите из списка'
             })
+    +footer()
+    

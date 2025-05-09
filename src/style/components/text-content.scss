@@ -1,8 +1,9 @@
 .text-content {
     @include text-body;
-    max-width: 900px;
+    max-width: 90rem;
     margin: 0 auto;
     color: var(--text-color);
+    overflow: hidden;
 
     p {
         padding: 2.4rem 0;
@@ -83,7 +84,7 @@
     }
 
     .table {
-        max-width: 90rem;
+        width: 100%;
         overflow-x: auto;
         padding: 5.6rem 0;
 
@@ -97,6 +98,7 @@
         width: 90rem;
         border-spacing: 0;
         overflow: hidden;
+        display: inline-block;
 
         th,
         td {
@@ -127,6 +129,7 @@
 
             th:first-child {
                 border-top-left-radius: 3.2rem;
+
                 @include mobile {
                     border-top-left-radius: 0;
                 }
@@ -134,6 +137,7 @@
 
             th:last-child {
                 border-top-right-radius: 3.2rem;
+
                 @include mobile {
                     border-top-right-radius: 0;
                 }
@@ -142,6 +146,7 @@
 
         tbody tr:last-child td:first-child {
             border-bottom-left-radius: 3.2rem;
+
             @include mobile {
                 border-bottom-left-radius: 0;
             }
@@ -149,6 +154,7 @@
 
         tbody tr:last-child td:last-child {
             border-bottom-right-radius: 3.2rem;
+
             @include mobile {
                 border-bottom-right-radius: 0;
             }
