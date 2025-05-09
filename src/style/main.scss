@@ -30,3 +30,7 @@
 @import './components/header.scss';
 @import './components/footer.scss';
 @import './components/hint.scss';
+
+main {
+    overflow: hidden;
+}

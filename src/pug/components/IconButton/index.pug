@@ -6,6 +6,6 @@ mixin actionButton(props={})
         } = props
 
     #{tag}.action-button(
-        class=[`action-button--${type}`]
+        class=type
     )&attributes(attributes)
         i.icon(class=`icon-${type}`)

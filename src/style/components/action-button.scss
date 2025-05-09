@@ -22,7 +22,7 @@
         }
     }
 
-    &.action-button--bookmark {
+    &.bookmark {
 
         &:active {
             background-color: rgba(255, 255, 255, 0.2);
@@ -43,7 +43,7 @@
         }
     }
 
-    &.action-button--play {
+    &.play {
         &:active {
             background-color: rgba(255, 255, 255, 0.2);
         }
