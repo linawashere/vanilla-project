@@ -1,5 +1,5 @@
 @function icon-url($icon-name){
-@return url('../../icons/#{$icon-name}.svg');
+    @return url('../../icons/#{$icon-name}.svg');
 }
 
 .icon {
@@ -142,4 +142,16 @@
 
 .icon-users-group {
     background-image: icon-url('users-group');
+}
+
+.icon-tg {
+    background-image: icon-url('tg');
+}
+
+.icon-vk {
+    background-image: icon-url('vk');
+}
+
+.icon-paraweb-logo {
+    background-image: icon-url('paraweb-logo');
 }
