@@ -44,14 +44,6 @@
             border-radius: 1.6rem;
         }
 
-        @include from-mobile {
-            &:hover {
-                .event-card__title {
-                    color: var(--ultramarine-default-color);
-                }
-            }
-        }
-
         .event-card__date {
             position: absolute;
             top: 1.6rem;
@@ -119,10 +111,7 @@
             .event-card__header__top {
                 display: flex;
                 justify-content: space-between;
-
-                // .event-card__tag {
-                //     gap: 1rem;
-                // }
+                align-items: center;
 
                 .event-card__timer {
                     display: inline-flex;
@@ -144,7 +133,9 @@
                     }
 
                     &--urgent {
-                        color: var(--suai-red-default-color);
+                        .event-card__timer-days {
+                            color: var(--suai-red-default-color);
+                        }
 
                         .icon-alarm-plus {
                             content: url('../../icons/alarm-plus-red.svg');
@@ -203,6 +194,14 @@
                     height: 2.4rem;
                     background-image: url('../../icons/users-group.svg');
                 }
+            }
+        }
+    }
+
+    @include from-mobile {
+        &:hover {
+            .event-card__title {
+                color: var(--ultramarine-default-color) !important;
             }
         }
     }
