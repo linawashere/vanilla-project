@@ -9,7 +9,7 @@ mixin pagination(props = {})
     #{tag}.pagination(
         class=[
             `pagination--${type}`,
-            { 'pagination--disabled': isDisabled }
+            { 'pagination__disabled': isDisabled }
         ]
     )&attributes(attributes)
         .pagination__inner

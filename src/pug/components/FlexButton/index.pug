@@ -11,7 +11,7 @@ mixin flexButton(props={})
         } = props
 
     #{tag}.flex-button(
-        class=[{ 'flex-button--disabled': isDisabled }]
+        class=[{ 'flex-button__disabled': isDisabled }]
         href=(tag === 'a' ? href : undefined)
     )&attributes(attributes)
         .flex-button__inner

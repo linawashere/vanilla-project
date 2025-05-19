@@ -7,7 +7,7 @@ mixin accordion(props = {})
         } = props
 
     #{tag}.accordion(
-        class=isExpanded ? 'accordion--expanded' : ''
+        class=isExpanded ? 'accordion__expanded' : ''
     )&attributes(attributes)
         .accordion__header
             button.accordion__toggle

@@ -48,7 +48,7 @@
         }
     }
 
-    &--disabled {
+    &__disabled {
         color: var(--text-blind-color);
         cursor: not-allowed;
         pointer-events: none;

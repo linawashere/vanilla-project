@@ -8,7 +8,7 @@ mixin button(props={})
         } = props
 
     #{tag}.button(
-        class=[{ 'button--disabled': isDisabled, _contrast: contrast, _outlined: outlined }]
+        class=[{ 'button__disabled': isDisabled, _contrast: contrast, _outlined: outlined }]
     )&attributes(attributes)
         .button__inner
             span.button__text

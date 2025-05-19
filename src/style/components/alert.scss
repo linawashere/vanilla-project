@@ -61,11 +61,11 @@
         }
     }
 
-    &--success {
+    &__success {
         border: 1px solid var(--electric-green-default-color);
     }
 
-    &--error {
+    &__error {
         border: 1px solid var(--suai-red-default-color);
     }
 }

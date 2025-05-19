@@ -6,7 +6,7 @@ mixin tag(props = {})
             color = ''
         } = props
 
-    #{tag}.tag(class=`tag--${type} tag--${color}`)&attributes(attributes)
+    #{tag}.tag(class=`tag__${type} tag__${color}`)&attributes(attributes)
         .tag__inner
             span.tag__text
                 block

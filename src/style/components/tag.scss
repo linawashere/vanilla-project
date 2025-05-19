@@ -15,11 +15,11 @@
         gap: 0.8rem;
     }
 
-    &--educational-materials {
+    &__educational-materials {
         background-color: var(--card-color);
     }
 
-    &--event {
+    &__event {
         background-color: var(--gray-color-3);
     }
 
@@ -29,27 +29,27 @@
         }
     }
 
-    &--parenting {
+    &__parenting {
         background-color: var(--cyan-light-color-2);
         color: var(--cyan-default-color);
     }
 
-    &--education {
+    &__education {
         background-color: var(--purple-light-color);
         color: var(--purple-default-color);
     }
 
-    &--science {
+    &__science {
         background-color: var(--electric-green-light-color-2);
         color: var(--electric-green-default-color);
     }
 
-    &--creativity {
+    &__creativity {
         background-color: var(--suai-red-light-2-color);
         color: var(--suai-red-light-1-color);
     }
 
-    &--sport {
+    &__sport {
         background-color: var(--suai-blue-light-color);
         color: var(--suai-blue-default-color);
     }

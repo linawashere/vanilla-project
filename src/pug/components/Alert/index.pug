@@ -5,7 +5,7 @@ mixin alert(props={})
             type = null,
         } = props
 
-    #{tag}.alert(class=type ? `alert--${type}` : null)&attributes(attributes)
+    #{tag}.alert(class=type ? `alert__${type}` : null)&attributes(attributes)
         .alert__content
             if type
                 i.icon-alert(class=`icon-${type}`)
