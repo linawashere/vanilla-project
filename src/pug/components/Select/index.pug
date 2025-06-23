@@ -4,20 +4,27 @@ mixin select(props = {})
             tag = 'div',
             options = [],
             placeholder = 'Выберите из списка',
-            isDisabled = false
+            isDisabled = false,
+            multi = false
         } = props
+
     #{tag}.select(
         class=[{
             'select__disabled': isDisabled
         }]
     )&attributes(attributes)
-        
         .select__header
-           span.select__label= placeholder
-           i.icon.icon-right
+            span.select__label= placeholder
+            i.icon.icon-right
 
         ul.select__options
             each option in options
                 li.select__option
-                    input(type="checkbox", name="options[]", value=option.value)
-                    label(for=option.value)= option.label
+                    label(for=`option-${option.value}`)
+                        input(
+                            type=(multi ? 'checkbox' : 'radio'),
+                            name="options",
+                            value=option.value,
+                            id=`option-${option.value}`
+                        )
+                        | #{option.label}

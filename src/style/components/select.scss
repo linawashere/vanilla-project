@@ -46,10 +46,10 @@
 
     &__options {
         display: none;
-        position: absolute;
+        // position: absolute;
+        // top: 100%;
+        // left: 0;
         width: 100%;
-        top: 100%;
-        left: 0;
         z-index: 100;
         background-color: var(--card-color);
         border-radius: 1.2rem;
@@ -67,6 +67,7 @@
     }
 
     &.open {
+        max-height: 300px;
         .select__header {
             .select__label {
                 color: var(--text-color);
@@ -88,27 +89,30 @@
         display: flex;
         align-items: center;
 
-        input[type="checkbox"] {
-            position: relative;
-            margin-right: 1.2rem;
-            appearance: none;
-            width: 2rem;
-            height: 2rem;
-            border: 1px solid var(--border-color);
-            border-radius: 0.8rem;
+        label {
+            display: block;
+            width: 100%;
             cursor: pointer;
-
-            &:checked + label::before {
-                content: '';
-                display: inline-block;
-                width: 2rem;
-                height: 2rem;
-                background-image: url('../../icons/checkbox.svg');
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
         }
+
+        // label::before {
+        //     content: '';
+        //     display: inline-block;
+        //     width: 2rem;
+        //     height: 2rem;
+        //     margin-right: 1rem;
+        //     background-color: var(--primary-color); // Цвет фона кружка
+        //     border-radius: 50%; // Круглая форма
+        //     transition: all 0.3s ease;
+        // }
+
+        // input[type="radio"]:checked + label::before {
+        //     background-color: var(--secondary-color); // Цвет при выборе
+        // }
+
+        // input[type="radio"]:hover + label::before {
+        //     background-color: var(--hover-color); // Цвет при наведении
+        // }
     }
 
     &__disabled {
